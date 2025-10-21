@@ -13,6 +13,7 @@ import 'package:template/features/auth/screens/sign_up_screen.dart';
 import 'package:template/features/home/bindings/home_binding.dart';
 import 'package:template/features/home/screens/home_screens.dart';
 import 'package:template/features/splash/bindings/splash_binding.dart';
+import 'package:template/features/splash/bindings/subscription_binding.dart';
 import 'package:template/features/splash/screens/onboarding/onbaording1.dart';
 import 'package:template/features/splash/screens/onboarding/onboarding2.dart';
 import 'package:template/features/splash/screens/onboarding/onboarding3.dart';
@@ -26,6 +27,7 @@ import 'package:template/features/splash/screens/userselection/language_selectio
 import 'package:template/features/splash/screens/userselection/lifestyle_selection_screen.dart';
 import 'package:template/features/splash/screens/userselection/primary_health_goal_selection_screen.dart';
 import 'package:template/features/splash/screens/userselection/specific_diet_selection_screen.dart';
+import 'package:template/features/splash/screens/userselection/subscription_screen.dart';
 import 'package:template/features/splash/screens/userselection/weight_selection_screen.dart';
 import 'package:template/routes/routes_name.dart';
 
@@ -154,6 +156,13 @@ class AppRoutes {
       name: RoutesName.languageSelection,
       page: () => LanguageSelection(),
       transition: Transition.rightToLeft,
+    ),
+
+    GetPage(
+      name: RoutesName.subscriptionPages,
+      page: () => SubscriptionPage(),
+      transition: Transition.rightToLeft,
+      binding: SubscriptionBinding()
     ),
   ];
 }

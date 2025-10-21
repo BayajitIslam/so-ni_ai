@@ -12,4 +12,5 @@ class AppColors {
   static const Color whiteText = Color(0xFFFEFEFE);
   static const Color icon = Color(0xFF2F2F2F);
   static const Color brandBorder = Color(0xFF88623A);
+  static const Color greyNormal = Color(0xFF333333);
 }

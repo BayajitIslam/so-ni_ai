@@ -31,7 +31,7 @@ class LanguageSelection extends StatelessWidget {
             ],
 
             selectedOption: selectedLanguage,
-            nextPagesNamed: RoutesName.dietaryRestrictionScreen,
+            nextPagesNamed: RoutesName.subscriptionPages,
           ),
         ],
       ),

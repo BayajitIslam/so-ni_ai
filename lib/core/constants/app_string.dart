@@ -63,4 +63,24 @@ class AppString {
       "Do You Have Any Dietary Restrictions?";
   static const String selectALanguage = "Select a Language";
   static const String yourName = "Your name";
+
+  static const String startYour3dayFreeTrailToContinue =
+      "Start your 3-day FREE trial to continue.";
+  static const String today = "Today";
+  static const String day2 = "Day 2";
+  static const String after3Day = "After day 3";
+  static const String getFullAccessAndSeeYourMindset =
+      "Get full access and see your mindset startfo change.";
+  static const String getAreminderThatYourTrialEndsIn =
+      "Get a reminder that your trial ends in 24 hours";
+  static const String yourFreeTrailEndsAndYouWillbeCharged =
+      "Your free trial ends and you'll be charged, cancel anytime before";
+  static const String monthly = "Monthly";
+  static const String mo199 = "1.99 €/mo";
+  static const String yearly = "Yearly";
+  static const String mo099 = "0.99 €/mo";
+  static const String dayfree3 = "3 days Free ";
+  static const String noPaymentDueNow = "No Payment Due Now";
+  static const String start3dayFreeTrial = "Start 3-day free trial";
+  static const String daysFreeThen = "3days free then 11,88€ a year";
 }

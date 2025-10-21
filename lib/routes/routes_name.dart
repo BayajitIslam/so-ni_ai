@@ -25,4 +25,5 @@ class RoutesName {
       "/specificDietSelectionScreen";
   static const String dietaryRestrictionScreen = "/dietaryRestrictionScreen";
   static const String languageSelection = "/languageSelection";
+    static const String subscriptionPages = "/subscriptionPages";
 }
