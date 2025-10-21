@@ -30,4 +30,6 @@ class AppString {
       "Enter 6 digit code that mentioned in the email";
   static const String enterNewPassword = "Enter your new password";
   static const String reEnterNewPassword = "Re- Enter new password";
+  static const String passwordUpdateSuccessfully =
+      "Password Update Successfully";
 }

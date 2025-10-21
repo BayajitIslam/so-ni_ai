@@ -50,7 +50,7 @@ class SignInScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 42.h),
-        
+
               // Email TextField with GetX binding
               CustomTextField(
                 controller: emailController,
@@ -66,7 +66,7 @@ class SignInScreen extends StatelessWidget {
                 obscureText: true,
                 onChanged: (value) => signInController.password.value = value,
               ),
-        
+
               SizedBox(height: 8.h),
               // Forgot Password Link
               GestureDetector(
@@ -84,7 +84,7 @@ class SignInScreen extends StatelessWidget {
                   ],
                 ),
               ),
-        
+
               SizedBox(height: 68.h),
               // Sign In Button with GetX action
               CustomButton(
@@ -93,7 +93,7 @@ class SignInScreen extends StatelessWidget {
                   signInController.signIn(); // Call sign-in method
                 },
               ),
-        
+
               SizedBox(height: 20.h),
               // Sign Up Button (navigate to SignUp screen)
               CustomButton(

@@ -6,6 +6,6 @@ class OtpBinding extends Bindings {
   @override
   void dependencies() {
     // Bind the OtpController when navigating to the OTP screen
-    Get.put(OtpController());
+    Get.lazyPut(() => OtpController(), fenix: true);
   }
 }

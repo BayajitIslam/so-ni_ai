@@ -9,7 +9,6 @@ import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/controllers/otp_controller.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/features/auth/widgets/custom_otp_textfield.dart';
-import 'package:template/routes/routes_name.dart';
 
 class OtpScreen extends StatelessWidget {
   OtpScreen({super.key});
@@ -77,9 +76,10 @@ class OtpScreen extends StatelessWidget {
               SizedBox(height: 24.h),
               // Verify Code Button
               CustomButton(
-                title: AppString.veryfyCode,
+                title: otpController.isForgotPasswordFlow.value
+                    ? AppString.resetPassword
+                    : AppString.veryfyCode,
                 onTap: () {
-                  Get.toNamed(RoutesName.passwordReset);
                   otpController
                       .verifyOtp(); // Call verifyOtp method when tapped
                 },

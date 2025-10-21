@@ -9,7 +9,10 @@ import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/routes/routes_name.dart';
 
 class AccountCreateSuccessfull extends StatelessWidget {
-  const AccountCreateSuccessfull({super.key});
+  AccountCreateSuccessfull({super.key});
+
+  //argument
+  final argument = Get.arguments;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class AccountCreateSuccessfull extends StatelessWidget {
           children: [
             SizedBox(height: 90.h),
             Text(
-              AppString.accouintCreateSuccesfull,
+              argument,
 
               style: AppTextStyles.s20w7I(),
             ),

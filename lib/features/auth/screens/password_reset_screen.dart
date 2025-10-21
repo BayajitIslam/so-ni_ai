@@ -49,7 +49,7 @@ class PasswordResetScreen extends StatelessWidget {
             children: [
               SizedBox(height: 33.h),
               Text(AppString.passwordReset, style: AppTextStyles.s20w7I()),
-        
+
               SizedBox(height: 17.h),
               // New Password TextField
               CustomTextField(
@@ -60,7 +60,7 @@ class PasswordResetScreen extends StatelessWidget {
                 onChanged: (value) =>
                     passwordResetController.newPassword.value = value,
               ),
-        
+
               SizedBox(height: 16.h),
               // Re-enter Password TextField
               CustomTextField(

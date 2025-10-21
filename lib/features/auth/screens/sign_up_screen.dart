@@ -72,7 +72,8 @@ class SignUpScreen extends StatelessWidget {
                 controller: mobileNumberController,
                 hintText: AppString.enterMobileNumber,
                 icon: Icons.phone,
-                onChanged: (value) => signUpController.mobileNumber.value = value,
+                onChanged: (value) =>
+                    signUpController.mobileNumber.value = value,
               ),
               // Password TextField with GetX binding
               CustomTextField(
@@ -90,22 +91,25 @@ class SignUpScreen extends StatelessWidget {
                 obscureText: true,
                 onChanged: (value) => signUpController.rePassword.value = value,
               ),
-        
+
               SizedBox(height: 55.h),
               // Sign Up Button with GetX action
               CustomButton(
                 title: AppString.signUp,
                 onTap: () {
-                  Get.toNamed(RoutesName.accountCreatedSuccessfull);
+                  Get.toNamed(
+                    RoutesName.otpScreen,
+                    arguments: emailController.text,
+                  );
                 },
               ),
-        
+
               SizedBox(height: 20.h),
               CustomButton(
                 title: AppString.singIn,
                 onTap: () => Get.toNamed(RoutesName.signin),
               ),
-        
+
               // Sign In Button
             ],
           ),

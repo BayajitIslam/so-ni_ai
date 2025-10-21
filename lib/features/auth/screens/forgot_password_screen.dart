@@ -6,6 +6,7 @@ import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/constants/app_string.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/controllers/forgot_password_controller.dart';
+import 'package:template/features/auth/controllers/otp_controller.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/features/auth/widgets/custome_textfield.dart';
 import 'package:template/routes/routes_name.dart';
@@ -75,12 +76,17 @@ class ForgotPasswordScreen extends StatelessWidget {
               CustomButton(
                 title: AppString.resetPassword,
                 onTap: () {
+                  final otpController = Get.find<OtpController>();
+                  otpController.setFlow(
+                    true,
+                  ); // Set the flow to forgot password
+                  forgotPasswordController
+                      .resetPassword(); // Call resetPassword method
+
                   Get.toNamed(
                     RoutesName.otpScreen,
                     arguments: emailController.text,
                   );
-                  forgotPasswordController
-                      .resetPassword(); // Call resetPassword method
                 },
               ),
             ],
