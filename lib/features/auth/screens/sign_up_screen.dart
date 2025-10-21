@@ -27,8 +27,10 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
+        forceMaterialTransparency: true,
         elevation: 0,
 
         leading: Padding(
@@ -44,67 +46,69 @@ class SignUpScreen extends StatelessWidget {
         title: Text(AppString.soni, style: AppTextStyles.s32w5P()),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 37.h),
-            // Full Name TextField with GetX binding
-            CustomTextField(
-              controller: fullNameController,
-              hintText: AppString.enterfullName,
-              icon: MyIcons.navUser,
-              onChanged: (value) => signUpController.fullName.value = value,
-            ),
-            // Email TextField with GetX binding
-            CustomTextField(
-              controller: emailController,
-              hintText: AppString.enterEmailAddress,
-              icon: Icons.email,
-              onChanged: (value) => signUpController.email.value = value,
-            ),
-            // Mobile Number TextField with GetX binding
-            CustomTextField(
-              controller: mobileNumberController,
-              hintText: AppString.enterMobileNumber,
-              icon: Icons.phone,
-              onChanged: (value) => signUpController.mobileNumber.value = value,
-            ),
-            // Password TextField with GetX binding
-            CustomTextField(
-              controller: passwordController,
-              hintText: AppString.enterPassword,
-              icon: MyIcons.lock,
-              obscureText: true,
-              onChanged: (value) => signUpController.password.value = value,
-            ),
-            // Re-enter Password TextField with GetX binding
-            CustomTextField(
-              controller: rePasswordController,
-              hintText: AppString.reEnterPassword,
-              icon: MyIcons.lock,
-              obscureText: true,
-              onChanged: (value) => signUpController.rePassword.value = value,
-            ),
-
-            SizedBox(height: 55.h),
-            // Sign Up Button with GetX action
-            CustomButton(
-              title: AppString.signUp,
-              onTap: () {
-                Get.toNamed(RoutesName.accountCreatedSuccessfull);
-              },
-            ),
-
-            SizedBox(height: 20.h),
-            CustomButton(
-              title: AppString.singIn,
-              onTap: () => Get.toNamed(RoutesName.signin),
-            ),
-
-            // Sign In Button
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 37.h),
+              // Full Name TextField with GetX binding
+              CustomTextField(
+                controller: fullNameController,
+                hintText: AppString.enterfullName,
+                icon: MyIcons.navUser,
+                onChanged: (value) => signUpController.fullName.value = value,
+              ),
+              // Email TextField with GetX binding
+              CustomTextField(
+                controller: emailController,
+                hintText: AppString.enterEmailAddress,
+                icon: Icons.email,
+                onChanged: (value) => signUpController.email.value = value,
+              ),
+              // Mobile Number TextField with GetX binding
+              CustomTextField(
+                controller: mobileNumberController,
+                hintText: AppString.enterMobileNumber,
+                icon: Icons.phone,
+                onChanged: (value) => signUpController.mobileNumber.value = value,
+              ),
+              // Password TextField with GetX binding
+              CustomTextField(
+                controller: passwordController,
+                hintText: AppString.enterPassword,
+                icon: MyIcons.lock,
+                obscureText: true,
+                onChanged: (value) => signUpController.password.value = value,
+              ),
+              // Re-enter Password TextField with GetX binding
+              CustomTextField(
+                controller: rePasswordController,
+                hintText: AppString.reEnterPassword,
+                icon: MyIcons.lock,
+                obscureText: true,
+                onChanged: (value) => signUpController.rePassword.value = value,
+              ),
+        
+              SizedBox(height: 55.h),
+              // Sign Up Button with GetX action
+              CustomButton(
+                title: AppString.signUp,
+                onTap: () {
+                  Get.toNamed(RoutesName.accountCreatedSuccessfull);
+                },
+              ),
+        
+              SizedBox(height: 20.h),
+              CustomButton(
+                title: AppString.singIn,
+                onTap: () => Get.toNamed(RoutesName.signin),
+              ),
+        
+              // Sign In Button
+            ],
+          ),
         ),
       ),
     );

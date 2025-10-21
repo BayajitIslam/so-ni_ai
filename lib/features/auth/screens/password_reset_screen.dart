@@ -22,7 +22,9 @@ class PasswordResetScreen extends StatelessWidget {
     final passwordResetController = Get.find<PasswordResetController>();
 
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
+        forceMaterialTransparency: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
 
@@ -39,45 +41,47 @@ class PasswordResetScreen extends StatelessWidget {
         title: Text(AppString.soni, style: AppTextStyles.s32w5P()),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 33.h),
-            Text(AppString.passwordReset, style: AppTextStyles.s20w7I()),
-
-            SizedBox(height: 17.h),
-            // New Password TextField
-            CustomTextField(
-              controller: newPasswordController,
-              hintText: AppString.enterNewPassword,
-              icon: Icons.lock,
-              obscureText: true,
-              onChanged: (value) =>
-                  passwordResetController.newPassword.value = value,
-            ),
-
-            SizedBox(height: 16.h),
-            // Re-enter Password TextField
-            CustomTextField(
-              controller: newRePasswordController,
-              hintText: AppString.reEnterNewPassword,
-              icon: Icons.lock,
-              obscureText: true,
-              onChanged: (value) =>
-                  passwordResetController.confirmPassword.value = value,
-            ),
-            SizedBox(height: 46.h),
-            // Update Password Button
-            CustomButton(
-              title: AppString.updatePassword,
-              onTap: () {
-                passwordResetController
-                    .resetPassword(); // Call resetPassword method when tapped
-              },
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 33.h),
+              Text(AppString.passwordReset, style: AppTextStyles.s20w7I()),
+        
+              SizedBox(height: 17.h),
+              // New Password TextField
+              CustomTextField(
+                controller: newPasswordController,
+                hintText: AppString.enterNewPassword,
+                icon: Icons.lock,
+                obscureText: true,
+                onChanged: (value) =>
+                    passwordResetController.newPassword.value = value,
+              ),
+        
+              SizedBox(height: 16.h),
+              // Re-enter Password TextField
+              CustomTextField(
+                controller: newRePasswordController,
+                hintText: AppString.reEnterNewPassword,
+                icon: Icons.lock,
+                obscureText: true,
+                onChanged: (value) =>
+                    passwordResetController.confirmPassword.value = value,
+              ),
+              SizedBox(height: 46.h),
+              // Update Password Button
+              CustomButton(
+                title: AppString.updatePassword,
+                onTap: () {
+                  passwordResetController
+                      .resetPassword(); // Call resetPassword method when tapped
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

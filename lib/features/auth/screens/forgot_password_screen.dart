@@ -23,7 +23,9 @@ class ForgotPasswordScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
+        forceMaterialTransparency: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
 
@@ -40,47 +42,49 @@ class ForgotPasswordScreen extends StatelessWidget {
         title: Text(AppString.soni, style: AppTextStyles.s32w5P()),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(height: 62.h),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              SizedBox(height: 62.h),
 
-            // Title
-            Text(AppString.forgotPassword, style: AppTextStyles.s20w7I()),
+              // Title
+              Text(AppString.forgotPassword, style: AppTextStyles.s20w7I()),
 
-            // Sub Title
-            SizedBox(height: 5.h),
-            Text(
-              AppString.pleaseEnterYourEmail,
-              style: AppTextStyles.s14w4I(color: AppColors.black),
-            ),
+              // Sub Title
+              SizedBox(height: 5.h),
+              Text(
+                AppString.pleaseEnterYourEmail,
+                style: AppTextStyles.s14w4I(color: AppColors.black),
+              ),
 
-            SizedBox(height: 47.h),
-            // Email TextField with GetX binding
-            CustomTextField(
-              controller: emailController,
-              hintText: AppString.enterEmailAddress,
-              icon: Icons.email,
-              onChanged: (value) =>
-                  forgotPasswordController.email.value = value,
-            ),
+              SizedBox(height: 47.h),
+              // Email TextField with GetX binding
+              CustomTextField(
+                controller: emailController,
+                hintText: AppString.enterEmailAddress,
+                icon: Icons.email,
+                onChanged: (value) =>
+                    forgotPasswordController.email.value = value,
+              ),
 
-            SizedBox(height: 24.h),
-            // Reset Password Button with GetX action
-            CustomButton(
-              title: AppString.resetPassword,
-              onTap: () {
-                Get.toNamed(
-                  RoutesName.otpScreen,
-                  arguments: emailController.text,
-                );
-                forgotPasswordController
-                    .resetPassword(); // Call resetPassword method
-              },
-            ),
-          ],
+              SizedBox(height: 24.h),
+              // Reset Password Button with GetX action
+              CustomButton(
+                title: AppString.resetPassword,
+                onTap: () {
+                  Get.toNamed(
+                    RoutesName.otpScreen,
+                    arguments: emailController.text,
+                  );
+                  forgotPasswordController
+                      .resetPassword(); // Call resetPassword method
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );

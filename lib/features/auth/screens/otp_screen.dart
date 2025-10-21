@@ -23,7 +23,9 @@ class OtpScreen extends StatelessWidget {
     final otpController = Get.find<OtpController>();
 
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
+        forceMaterialTransparency: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
 
@@ -40,69 +42,72 @@ class OtpScreen extends StatelessWidget {
         title: Text(AppString.soni, style: AppTextStyles.s32w5P()),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 37.h),
-            Text(AppString.checkYourEmail, style: AppTextStyles.s20w7I()),
-            SizedBox(height: 10.h),
-            Text(
-              '${AppString.weSentCode} $email. ${AppString.enter6digitCose}.',
-              style: AppTextStyles.s16w4I(color: AppColors.icon),
-            ),
-            SizedBox(height: 47.h),
-            // OTP Input Fields
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: List.generate(6, (index) {
-                return Container(
-                  width: 44.w,
-                  height: 44.h,
-                  margin: EdgeInsets.symmetric(horizontal: 5.w),
-                  //Text Field
-                  child: CustomOtpTextField(
-                    index: index,
-                    onChanged: (value) {
-                      otpController.otp[index].value = value;
-                    },
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 37.h),
+              Text(AppString.checkYourEmail, style: AppTextStyles.s20w7I()),
+              SizedBox(height: 10.h),
+              Text(
+                '${AppString.weSentCode} $email. ${AppString.enter6digitCose}.',
+                style: AppTextStyles.s16w4I(color: AppColors.icon),
+              ),
+              SizedBox(height: 47.h),
+              // OTP Input Fields
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: List.generate(6, (index) {
+                  return Container(
+                    width: 44.w,
+                    height: 44.h,
+                    margin: EdgeInsets.symmetric(horizontal: 5.w),
+                    //Text Field
+                    child: CustomOtpTextField(
+                      index: index,
+                      onChanged: (value) {
+                        otpController.otp[index].value = value;
+                      },
+                    ),
+                  );
+                }),
+              ),
+              SizedBox(height: 24.h),
+              // Verify Code Button
+              CustomButton(
+                title: AppString.veryfyCode,
+                onTap: () {
+                  Get.toNamed(RoutesName.passwordReset);
+                  otpController
+                      .verifyOtp(); // Call verifyOtp method when tapped
+                },
+              ),
+              SizedBox(height: 24.h),
+              // Resend Email Option
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    AppString.haventgotEmail,
+                    style: AppTextStyles.s14w4I(color: AppColors.black),
                   ),
-                );
-              }),
-            ),
-            SizedBox(height: 24.h),
-            // Verify Code Button
-            CustomButton(
-              title: AppString.veryfyCode,
-              onTap: () {
-                Get.toNamed(RoutesName.passwordReset);
-                otpController.verifyOtp(); // Call verifyOtp method when tapped
-              },
-            ),
-            SizedBox(height: 24.h),
-            // Resend Email Option
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  AppString.haventgotEmail,
-                  style: AppTextStyles.s14w4I(color: AppColors.black),
-                ),
 
-                SizedBox(width: 3.w),
-                GestureDetector(
-                  onTap: () {
-                    otpController.resendOtp(); // Call resendOtp when tapped
-                  },
-                  child: Text(
-                    AppString.resendEmail,
-                    style: AppTextStyles.s14w4I(color: AppColors.brandText),
+                  SizedBox(width: 3.w),
+                  GestureDetector(
+                    onTap: () {
+                      otpController.resendOtp(); // Call resendOtp when tapped
+                    },
+                    child: Text(
+                      AppString.resendEmail,
+                      style: AppTextStyles.s14w4I(color: AppColors.brandText),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -24,7 +24,9 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
+        forceMaterialTransparency: true,
         backgroundColor: Colors.transparent,
         elevation: 0,
 
@@ -41,64 +43,66 @@ class SignInScreen extends StatelessWidget {
         title: Text(AppString.soni, style: AppTextStyles.s32w5P()),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 42.h),
-
-            // Email TextField with GetX binding
-            CustomTextField(
-              controller: emailController,
-              hintText: AppString.enterEmailAddress,
-              icon: Icons.email,
-              onChanged: (value) => signInController.email.value = value,
-            ),
-            // Password TextField with GetX binding
-            CustomTextField(
-              controller: passwordController,
-              hintText: AppString.enterPassword,
-              icon: MyIcons.lock,
-              obscureText: true,
-              onChanged: (value) => signInController.password.value = value,
-            ),
-
-            SizedBox(height: 8.h),
-            // Forgot Password Link
-            GestureDetector(
-              onTap: () {
-                // Navigate to Reset Password screen
-                Get.toNamed(RoutesName.forgotPassword);
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Text(
-                    AppString.forgotPassword,
-                    style: AppTextStyles.s14w4I(color: AppColors.black),
-                  ),
-                ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(height: 42.h),
+        
+              // Email TextField with GetX binding
+              CustomTextField(
+                controller: emailController,
+                hintText: AppString.enterEmailAddress,
+                icon: Icons.email,
+                onChanged: (value) => signInController.email.value = value,
               ),
-            ),
-
-            SizedBox(height: 68.h),
-            // Sign In Button with GetX action
-            CustomButton(
-              title: AppString.singIn,
-              onTap: () {
-                signInController.signIn(); // Call sign-in method
-              },
-            ),
-
-            SizedBox(height: 20.h),
-            // Sign Up Button (navigate to SignUp screen)
-            CustomButton(
-              title: AppString.signUp,
-              onTap: () => Get.toNamed(RoutesName.sigunUp),
-              color: AppColors.buttonBg,
-            ),
-          ],
+              // Password TextField with GetX binding
+              CustomTextField(
+                controller: passwordController,
+                hintText: AppString.enterPassword,
+                icon: MyIcons.lock,
+                obscureText: true,
+                onChanged: (value) => signInController.password.value = value,
+              ),
+        
+              SizedBox(height: 8.h),
+              // Forgot Password Link
+              GestureDetector(
+                onTap: () {
+                  // Navigate to Reset Password screen
+                  Get.toNamed(RoutesName.forgotPassword);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      AppString.forgotPassword,
+                      style: AppTextStyles.s14w4I(color: AppColors.black),
+                    ),
+                  ],
+                ),
+              ),
+        
+              SizedBox(height: 68.h),
+              // Sign In Button with GetX action
+              CustomButton(
+                title: AppString.singIn,
+                onTap: () {
+                  signInController.signIn(); // Call sign-in method
+                },
+              ),
+        
+              SizedBox(height: 20.h),
+              // Sign Up Button (navigate to SignUp screen)
+              CustomButton(
+                title: AppString.signUp,
+                onTap: () => Get.toNamed(RoutesName.sigunUp),
+                color: AppColors.buttonBg,
+              ),
+            ],
+          ),
         ),
       ),
     );
