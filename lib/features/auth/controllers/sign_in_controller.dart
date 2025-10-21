@@ -1,5 +1,6 @@
 // lib/features/auth/controllers/sign_in_controller.dart
 import 'package:get/get.dart';
+import 'package:template/routes/routes_name.dart';
 
 class SignInController extends GetxController {
   // Reactive variables for email and password
@@ -11,6 +12,7 @@ class SignInController extends GetxController {
     if (email.isNotEmpty && password.isNotEmpty) {
       // Add your sign-in logic here (e.g., API call)
       print("Sign in successful with email: $email and password: $password");
+      Get.toNamed(RoutesName.ageSelection);
     } else {
       print("Email or password is missing");
     }

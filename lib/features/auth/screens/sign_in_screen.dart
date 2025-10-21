@@ -92,6 +92,7 @@ class SignInScreen extends StatelessWidget {
                 onTap: () {
                   signInController.signIn(); // Call sign-in method
                 },
+                textStyle: AppTextStyles.s14w4I(),
               ),
 
               SizedBox(height: 20.h),
@@ -100,6 +101,7 @@ class SignInScreen extends StatelessWidget {
                 title: AppString.signUp,
                 onTap: () => Get.toNamed(RoutesName.sigunUp),
                 color: AppColors.buttonBg,
+                textStyle: AppTextStyles.s14w4I(),
               ),
             ],
           ),

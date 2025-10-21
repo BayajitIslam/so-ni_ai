@@ -7,11 +7,11 @@ class AppTextStyles {
   //  lOGO SPLASH SCREEN ----------
   static TextStyle s48w4P({
     Color? color,
-    double fontSize = 16,
+    double fontSize = 48,
     FontWeight fontweight = FontWeight.w400,
   }) {
     return GoogleFonts.poppins(
-      color: color ?? AppColors.white,
+      color: color ?? AppColors.black,
       fontSize: fontSize.sp,
       fontWeight: fontweight,
       height: 1,
@@ -40,6 +40,20 @@ class AppTextStyles {
   }) {
     return GoogleFonts.inter(
       color: color ?? AppColors.white,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  Title ----------
+  static TextStyle s24w6P({
+    Color? color,
+    double fontSize = 24,
+    FontWeight fontweight = FontWeight.w600,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.icon,
       fontSize: fontSize.sp,
       fontWeight: fontweight,
       height: 1,

@@ -75,6 +75,7 @@ class ForgotPasswordScreen extends StatelessWidget {
               // Reset Password Button with GetX action
               CustomButton(
                 title: AppString.resetPassword,
+                textStyle: AppTextStyles.s14w4I(),
                 onTap: () {
                   final otpController = Get.find<OtpController>();
                   otpController.setFlow(

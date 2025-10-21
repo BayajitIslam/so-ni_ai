@@ -79,6 +79,7 @@ class PasswordResetScreen extends StatelessWidget {
                   passwordResetController
                       .resetPassword(); // Call resetPassword method when tapped
                 },
+                textStyle: AppTextStyles.s14w4I(),
               ),
             ],
           ),

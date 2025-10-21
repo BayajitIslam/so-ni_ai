@@ -1,6 +1,7 @@
 class AppString {
   //===================== Genaral =====================
   static const String soni = "SO:NI";
+  static const String continuee = "Continue";
 
   //======================= SingUp & SignIn Screen
   static const String enterfullName = "Enter Full Name";
@@ -32,4 +33,34 @@ class AppString {
   static const String reEnterNewPassword = "Re- Enter new password";
   static const String passwordUpdateSuccessfully =
       "Password Update Successfully";
+
+  //================================ Onboarding =================================
+  static const String smartFoodScanner = "Smart Food Scanner";
+  static const String instantlyAnalize =
+      "Instantly analyze your meals with AI to track calories and nutrients.";
+  static const String aiPowerdModelRecommend = "AI-Powered Meal Recommendation";
+  static const String getPersonalized =
+      "Get personalized meal plans tailored to your health and fitness goals.";
+  static const String smartMealDiary = "Smart Meal Diary";
+  static const String logYourDailyMeals =
+      "Log your daily meals and track your wellness journey effortlessly.";
+  static const String personalizedWorkoutPlan = "Personalized Workout Plan";
+  static const String aiTailored =
+      "AI-tailored workouts designed to match your goals and fitness level.";
+  static const String howOldAreYou = "How old are you?";
+  static const String whatsYourFullName = "What’s Your Full Name?";
+  static const String whatsYourGender = "What’s Your Gender?";
+  static const String whatsYourHeight = "What’s Your Height?";
+
+  static const String whatsYourWeight = "What’s Your Weight?";
+  static const String tellUsAboutYourLifestyle =
+      "Tell Us About Your Lifestyle!";
+  static const String whatsYourPrimaryHealthGoal =
+      "What’s your primary health goal?";
+  static const String doyouFollowSpecificDiet =
+      "Do you follow a specific diet?";
+  static const String doyouHaveAnyDietryRestrication =
+      "Do You Have Any Dietary Restrictions?";
+  static const String selectALanguage = "Select a Language";
+  static const String yourName = "Your name";
 }

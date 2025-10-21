@@ -40,11 +40,7 @@ class AccountCreateSuccessfull extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 90.h),
-            Text(
-              argument,
-
-              style: AppTextStyles.s20w7I(),
-            ),
+            Text(argument, style: AppTextStyles.s20w7I()),
             SizedBox(height: 10.h),
             Text(
               AppString.yourAccounthasBeenCreated,
@@ -56,6 +52,7 @@ class AccountCreateSuccessfull extends StatelessWidget {
             //  Button
             CustomButton(
               title: AppString.singIn,
+              textStyle: AppTextStyles.s14w4I(),
               onTap: () => Get.toNamed(RoutesName.signin),
             ),
           ],

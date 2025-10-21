@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/constants/app_string.dart';
 import 'package:template/core/constants/my_icons.dart';
 import 'package:template/core/themes/app_text_style.dart';
@@ -32,17 +31,6 @@ class SignUpScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         forceMaterialTransparency: true,
         elevation: 0,
-
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: GestureDetector(
-            onTap: () => Get.back(),
-            child: CircleAvatar(
-              backgroundColor: AppColors.buttonBg,
-              child: Icon(Icons.arrow_back, color: AppColors.white),
-            ),
-          ),
-        ),
         title: Text(AppString.soni, style: AppTextStyles.s32w5P()),
         centerTitle: true,
       ),
@@ -102,12 +90,14 @@ class SignUpScreen extends StatelessWidget {
                     arguments: emailController.text,
                   );
                 },
+                textStyle: AppTextStyles.s14w4I(),
               ),
 
               SizedBox(height: 20.h),
               CustomButton(
                 title: AppString.singIn,
                 onTap: () => Get.toNamed(RoutesName.signin),
+                textStyle: AppTextStyles.s14w4I(),
               ),
 
               // Sign In Button

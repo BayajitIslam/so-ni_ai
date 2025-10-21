@@ -83,6 +83,7 @@ class OtpScreen extends StatelessWidget {
                   otpController
                       .verifyOtp(); // Call verifyOtp method when tapped
                 },
+                textStyle: AppTextStyles.s14w4I(),
               ),
               SizedBox(height: 24.h),
               // Resend Email Option
