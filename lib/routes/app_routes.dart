@@ -41,7 +41,7 @@ class AppRoutes {
       name: RoutesName.sigunUp,
       page: () => SignUpScreen(),
       transition: Transition.rightToLeft,
-      binding: SignUpBinding(),
+      bindings: [SignUpBinding(), OtpBinding()],
     ),
     GetPage(
       name: RoutesName.signin,

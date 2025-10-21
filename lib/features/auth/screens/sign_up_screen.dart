@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:template/core/constants/app_string.dart';
 import 'package:template/core/constants/my_icons.dart';
 import 'package:template/core/themes/app_text_style.dart';
+import 'package:template/features/auth/controllers/otp_controller.dart';
 import 'package:template/features/auth/controllers/sign_up_controller.dart';
 
 import 'package:template/features/auth/widgets/custom_button.dart';
@@ -85,6 +86,12 @@ class SignUpScreen extends StatelessWidget {
               CustomButton(
                 title: AppString.signUp,
                 onTap: () {
+                  final otpController = Get.find<OtpController>();
+                  otpController.setFlow(
+                    false,
+                  ); // Set the flow to forgot password
+                  signUpController.signUp();
+
                   Get.toNamed(
                     RoutesName.otpScreen,
                     arguments: emailController.text,
