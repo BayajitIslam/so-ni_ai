@@ -144,6 +144,20 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle s22w4P({
+    Color? color,
+    double fontSize = 22,
+    FontWeight fontweight = FontWeight.w400,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.icon,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+      letterSpacing: -0.95,
+    );
+  }
+
   //  body ----------
   static TextStyle s16w4I({
     Color? color,

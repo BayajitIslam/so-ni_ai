@@ -12,8 +12,10 @@ import 'package:template/features/auth/screens/sign_in_screen.dart';
 import 'package:template/features/auth/screens/sign_up_screen.dart';
 import 'package:template/features/home/bindings/home_binding.dart';
 import 'package:template/features/home/screens/home_screens.dart';
+import 'package:template/features/splash/bindings/height_selection_binding.dart';
 import 'package:template/features/splash/bindings/splash_binding.dart';
 import 'package:template/features/splash/bindings/subscription_binding.dart';
+import 'package:template/features/splash/bindings/weight_selection_binding.dart';
 import 'package:template/features/splash/screens/onboarding/onbaording1.dart';
 import 'package:template/features/splash/screens/onboarding/onboarding2.dart';
 import 'package:template/features/splash/screens/onboarding/onboarding3.dart';
@@ -123,12 +125,14 @@ class AppRoutes {
       name: RoutesName.heightSelection,
       page: () => HeightSelectionScreen(),
       transition: Transition.rightToLeft,
+      binding: HeightSelectionBinding(),
     ),
 
     GetPage(
       name: RoutesName.weighttSelection,
       page: () => WeightSelectionScreen(),
       transition: Transition.rightToLeft,
+      binding: WeightSelectionBinding(),
     ),
     GetPage(
       name: RoutesName.lifestyleSelectin,
