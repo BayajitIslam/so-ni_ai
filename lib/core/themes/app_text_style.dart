@@ -32,8 +32,7 @@ class AppTextStyles {
     );
   }
 
-
-   //  Title ----------
+  //  Title ----------
   static TextStyle s20w5P({
     Color? color,
     double fontSize = 20,
@@ -46,7 +45,6 @@ class AppTextStyles {
       height: 1,
     );
   }
-
 
   //  Title ----------
   static TextStyle s24w6I({
@@ -131,8 +129,6 @@ class AppTextStyles {
     );
   }
 
-
-
   //  body ----------
   static TextStyle s12w5I({
     Color? color,
@@ -146,6 +142,7 @@ class AppTextStyles {
       height: 1,
     );
   }
+
   //  body ----------
   static TextStyle s20w7I({
     Color? color,

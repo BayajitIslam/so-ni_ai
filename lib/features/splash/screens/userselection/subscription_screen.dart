@@ -7,6 +7,7 @@ import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/features/splash/controllers/subscription_controller.dart';
 import 'package:template/features/splash/widgets/subsctiption_card.dart';
+import 'package:template/features/splash/widgets/trail_timeline_widget.dart';
 
 class SubscriptionPage extends StatelessWidget {
   SubscriptionPage({super.key});
@@ -26,7 +27,7 @@ class SubscriptionPage extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(20.0),
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,6 +43,9 @@ class SubscriptionPage extends StatelessWidget {
             ),
 
             // Trial Information Section
+            SizedBox(height: 74.h),
+            TrialTimeline(),
+            SizedBox(height: 67.h),
 
             // Subscription options with Obx for reactive state
             Obx(
