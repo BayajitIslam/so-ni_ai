@@ -146,8 +146,8 @@ class AppTextStyles {
 
   static TextStyle s22w4P({
     Color? color,
-    double fontSize = 22,
-    FontWeight fontweight = FontWeight.w400,
+    double fontSize = 22.17,
+    FontWeight fontweight = FontWeight.w500,
   }) {
     return GoogleFonts.poppins(
       color: color ?? AppColors.icon,
