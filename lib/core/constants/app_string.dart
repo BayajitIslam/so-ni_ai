@@ -83,4 +83,9 @@ class AppString {
   static const String noPaymentDueNow = "No Payment Due Now";
   static const String start3dayFreeTrial = "Start 3-day free trial";
   static const String daysFreeThen = "3days free then 11,88€ a year";
+  static const String great = "Great!";
+  static const String yourProfileIsReady = "Your profile is ready.  ";
+  static const String letsStartBuildingHealth =
+      "Let’s start building healthier habits together!";
+  static const String gotoHomePages = "Go to Homepage";
 }

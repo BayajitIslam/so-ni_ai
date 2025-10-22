@@ -26,6 +26,7 @@ import 'package:template/features/splash/screens/userselection/height_selection_
 import 'package:template/features/splash/screens/userselection/language_selection.dart';
 import 'package:template/features/splash/screens/userselection/lifestyle_selection_screen.dart';
 import 'package:template/features/splash/screens/userselection/primary_health_goal_selection_screen.dart';
+import 'package:template/features/splash/screens/userselection/profile_ready_screen.dart';
 import 'package:template/features/splash/screens/userselection/specific_diet_selection_screen.dart';
 import 'package:template/features/splash/screens/userselection/subscription_screen.dart';
 import 'package:template/features/splash/screens/userselection/weight_selection_screen.dart';
@@ -162,7 +163,12 @@ class AppRoutes {
       name: RoutesName.subscriptionPages,
       page: () => SubscriptionPage(),
       transition: Transition.rightToLeft,
-      binding: SubscriptionBinding()
+      binding: SubscriptionBinding(),
+    ),
+    GetPage(
+      name: RoutesName.profileReady,
+      page: () => ProfileReadyScreen(),
+      transition: Transition.rightToLeft,
     ),
   ];
 }

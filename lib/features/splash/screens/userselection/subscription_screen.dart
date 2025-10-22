@@ -8,6 +8,7 @@ import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/features/splash/controllers/subscription_controller.dart';
 import 'package:template/features/splash/widgets/subsctiption_card.dart';
 import 'package:template/features/splash/widgets/trail_timeline_widget.dart';
+import 'package:template/routes/routes_name.dart';
 
 class SubscriptionPage extends StatelessWidget {
   SubscriptionPage({super.key});
@@ -22,7 +23,7 @@ class SubscriptionPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: GestureDetector(
-          onTap: () => Get.back(),
+          onTap: () => Get.offAllNamed(RoutesName.profileReady),
           child: Icon(Icons.close, color: AppColors.black, size: 24.sp),
         ),
       ),
@@ -99,6 +100,7 @@ class SubscriptionPage extends StatelessWidget {
               onTap: () {
                 // Access selected plan
                 print('Selected Plan: ${controller.selectedPlan.value}');
+                Get.toNamed(RoutesName.profileReady);
               },
             ),
 

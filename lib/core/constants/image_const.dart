@@ -6,6 +6,8 @@ class AppImages {
   static const String onboarding3 = "assets/images/onboarding3.jpg";
   static const String onboarding4 = "assets/images/onboarding4.jpg";
 
+  static const String greatEmoji = "assets/images/greatEmoji.png";
+
   // =================== All Language Flage ===============
   static const String englishUs = "assets/images/english.png";
   static const String englishUk = "assets/images/english_uk.png";

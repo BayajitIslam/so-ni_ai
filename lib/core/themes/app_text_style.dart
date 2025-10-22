@@ -18,6 +18,20 @@ class AppTextStyles {
     );
   }
 
+  //title
+  static TextStyle s40w6P({
+    Color? color,
+    double fontSize = 40,
+    FontWeight fontweight = FontWeight.w600,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.icon,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
   //  Title ----------
   static TextStyle s20w6P({
     Color? color,
@@ -71,6 +85,21 @@ class AppTextStyles {
       fontSize: fontSize.sp,
       fontWeight: fontweight,
       height: 1,
+    );
+  }
+
+  //  Title ----------
+  static TextStyle s24w5P({
+    Color? color,
+    double fontSize = 24,
+    FontWeight fontweight = FontWeight.w500,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.icon,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+      letterSpacing: -1.58,
     );
   }
 
