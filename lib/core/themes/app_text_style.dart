@@ -146,6 +146,20 @@ class AppTextStyles {
   }
 
   //  body ----------
+  static TextStyle s14w4P({
+    Color? color,
+    double fontSize = 14,
+    FontWeight fontweight = FontWeight.w400,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.white,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
   static TextStyle s13w4P({
     Color? color,
     double fontSize = 13,
