@@ -1,5 +1,6 @@
 class RoutesName {
-  static const String home = "/homeScreen";
+  static const String homeScreenView = "/homeScreenView";
+  static const String homeNavScreen = "/homeNavScreen";
   static const String sigunUp = "/signup";
   static const String signin = "/signin";
   static const String forgotPassword = "/forgotPassword";

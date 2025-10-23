@@ -43,7 +43,7 @@ class ProfileReadyScreen extends StatelessWidget {
             CustomButton(
               textStyle: AppTextStyles.s16w5P(),
               title: AppString.gotoHomePages,
-              onTap: () => Get.offAllNamed(RoutesName.home),
+              onTap: () => Get.offAllNamed(RoutesName.homeNavScreen),
             ),
 
             SizedBox(height: 92.h),

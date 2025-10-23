@@ -11,7 +11,7 @@ import 'package:template/features/auth/screens/password_reset_screen.dart';
 import 'package:template/features/auth/screens/sign_in_screen.dart';
 import 'package:template/features/auth/screens/sign_up_screen.dart';
 import 'package:template/features/home/bindings/home_binding.dart';
-import 'package:template/features/home/screens/home_screens.dart';
+import 'package:template/features/home/screens/home_nav.dart';
 import 'package:template/features/splash/bindings/height_selection_binding.dart';
 import 'package:template/features/splash/bindings/splash_binding.dart';
 import 'package:template/features/splash/bindings/subscription_binding.dart';
@@ -37,8 +37,8 @@ import 'package:template/routes/routes_name.dart';
 class AppRoutes {
   static List<GetPage> pages = [
     GetPage(
-      name: RoutesName.home,
-      page: () => HomeScreen(),
+      name: RoutesName.homeNavScreen,
+      page: () => HomeNavScreen(),
       transition: Transition.rightToLeft,
       binding: HomeBinding(),
     ),

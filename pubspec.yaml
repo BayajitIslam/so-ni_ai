@@ -87,6 +87,7 @@ flutter:
     - family: CustomIcon
       fonts:
         - asset: assets/fonts/customeIcon.ttf
+        - asset: assets/fonts/icomoon.ttf
 
   #   - family: Trajan Pro
   #     fonts:

@@ -57,8 +57,17 @@ class HomeScreen extends GetView<HomeController> {
                   currentFat: 30,
                   totalFat: 60,
                 ),
-                SizedBox(height: 10),
+
+                //Meal Plan Calendar - customize your three days
+
+                //workout Progress
+                SizedBox(height: 13.h),
                 // 3. your Daily Workout Progress
+                Text(
+                  AppString.yourDailyWorkoutProgress,
+                  style: AppTextStyles.s20w5P(color: AppColors.black),
+                ),
+                SizedBox(height: 15.h),
                 ActivityCard(
                   title: 'your Daily Workout Progress',
                   currentValue: 500,

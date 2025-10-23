@@ -1,0 +1,70 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:template/core/constants/app_colors.dart';
+import 'package:template/features/home/screens/ai_generated_meal_recommendations_screen.dart';
+import 'package:template/features/home/screens/diary_screen.dart';
+import 'package:template/features/home/screens/home_screens.dart';
+import 'package:template/features/home/screens/profile_screen.dart';
+import 'package:template/features/home/screens/workout_screen.dart';
+import 'package:template/features/home/widgets/custome_navbar.dart';
+
+class HomeNavScreen extends StatefulWidget {
+  const HomeNavScreen({super.key});
+
+  @override
+  State<HomeNavScreen> createState() => _HomeNavScreenState();
+}
+
+class _HomeNavScreenState extends State<HomeNavScreen> {
+  int _currentIndex = 0;
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
+
+  //pages list
+  List pages = [
+    HomeScreen(),
+    AiGeneratedMealRecommendationsScreen(),
+    DiaryScreen(),
+    WorkoutScreen(),
+    ProfileScreen(),
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //Content
+      body: pages[_currentIndex],
+
+      //Floating Action Bar
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(right: 15.w, top: 15.h),
+        child: FloatingActionButton(
+          onPressed: () {
+            // Handle Camera/Quick Action click
+          },
+          elevation: 0,
+          backgroundColor: AppColors.buttonBg, // Dark brown color
+          shape: const CircleBorder(),
+          child: Icon(
+            Icons.camera_alt_outlined,
+            color: AppColors.white, // White icon
+            size: 28.sp,
+          ),
+        ),
+      ),
+
+      // Position the FAB in the center notch
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndDocked,
+
+      //Botton Nave
+      bottomNavigationBar: CustomBottomNavBar(
+        selectedIndex: _currentIndex,
+        onItemTapped: _onItemTapped,
+      ),
+    );
+  }
+}
