@@ -136,10 +136,10 @@ class _MeasurementPickerState extends State<MeasurementPicker> {
       if (widget.isMetric) {
         // CM format: "170.00 cm"
         selectedValue =
-            '${selectedMainValue}.${selectedDecimalValue.toString().padLeft(2, '0')} ${widget.unit}';
+            '$selectedMainValue.${selectedDecimalValue.toString().padLeft(2, '0')} ${widget.unit}';
       } else {
         // FT/IN format: "5 ft 7 in"
-        selectedValue = '${selectedMainValue}.${selectedDecimalValue} Fit';
+        selectedValue = '$selectedMainValue.$selectedDecimalValue Fit';
       }
     }
     // --- WEIGHT LOGIC (KGS or LBS) ---

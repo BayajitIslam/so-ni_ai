@@ -13,4 +13,6 @@ class AppColors {
   static const Color icon = Color(0xFF2F2F2F);
   static const Color brandBorder = Color(0xFF88623A);
   static const Color greyNormal = Color(0xFF333333);
+  static const Color yellowishLightOrange = Color(0xFFFFF4E2);
+  static const Color fire = Color(0xFFC54C15);
 }

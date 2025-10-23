@@ -118,6 +118,34 @@ class AppTextStyles {
   }
 
   //  body ----------
+  static TextStyle s16w4P({
+    Color? color,
+    double fontSize = 16,
+    FontWeight fontweight = FontWeight.w400,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.white,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
+  static TextStyle s14w5P({
+    Color? color,
+    double fontSize = 14,
+    FontWeight fontweight = FontWeight.w500,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.white,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
   static TextStyle s13w4P({
     Color? color,
     double fontSize = 13,

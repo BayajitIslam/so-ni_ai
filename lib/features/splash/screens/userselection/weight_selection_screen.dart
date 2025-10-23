@@ -10,6 +10,7 @@ import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/features/splash/controllers/measurement_controller.dart';
 import 'package:template/features/splash/widgets/measurement_picker.dart';
+import 'package:template/routes/routes_name.dart';
 
 class WeightSelectionScreen extends StatelessWidget {
   // ACCESS: The controller is retrieved from memory here, as it was put
@@ -85,7 +86,7 @@ class WeightSelectionScreen extends StatelessWidget {
                     'Final Weight Selected: ${measurementController.weightValue.value}',
                   );
                   // Assuming this is the correct route name for the next step:
-                  // Get.toNamed(RoutesName.targetSelection);
+                  Get.toNamed(RoutesName.lifestyleSelectin);
                 },
               ),
             ],

@@ -16,4 +16,12 @@ class AppImages {
   static const String italian = "assets/images/IT.png";
   static const String hungarian = "assets/images/HU.png";
   static const String french = "assets/images/FR.png";
+
+  // =================== Home Pages ===============
+  static const String dumbbell = "assets/icons/dumbbell.svg";
+  static const String fat = "assets/icons/fat.svg";
+  static const String gluten = "assets/icons/gluten.svg";
+  static const String hourglass = "assets/icons/hourglass.svg";
+  static const String meat = "assets/icons/meat.svg";
+  static const String youtube = "assets/icons/youtube.svg";
 }

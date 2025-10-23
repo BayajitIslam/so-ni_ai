@@ -88,4 +88,23 @@ class AppString {
   static const String letsStartBuildingHealth =
       "Let’s start building healthier habits together!";
   static const String gotoHomePages = "Go to Homepage";
+
+  //================================ Home Screen =================================
+  static const String yourDailyCalories = "Your Daily calories";
+  static const String kcalTotal = "Kcal Total";
+  static const String carbs = "Carbs";
+  static const String protein = "Protein";
+  static const String fat = "Fat";
+  static const String yourWeeklyCalories = "Your Weekly calories";
+  static const String mealPlanCalendar = "Meal Plan Calendar";
+  static const String customizeYourThreeDays = "Customize your three days";
+  static const String yourWaterGoal = "Daily Water Goal";
+  static const String latNight = "Last Night";
+  static const String weeklyAvg = "Weekly Avg";
+  static const String workWoutProgress = "Workout Progress";
+  static const String yourDailyWorkoutProgress = "your Daily Workout Progress";
+  static const String targetKcal = "Target Kcal";
+  static const String exercise = "Exercise";
+  static const String video = "Video";
+  static const String duration = "Duration";
 }
