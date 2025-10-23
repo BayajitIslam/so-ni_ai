@@ -23,7 +23,7 @@ class CustomOtpTextField extends StatelessWidget {
           BoxShadow(
             // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.1), // Shadow color with opacity
-            offset: Offset(0, 4), // Shadow position
+            offset: const Offset(0, 4), // Shadow position
             blurRadius: 8, // Blur effect for the shadow
           ),
         ],
@@ -32,6 +32,14 @@ class CustomOtpTextField extends StatelessWidget {
         keyboardType: TextInputType.number,
         textAlign: TextAlign.center,
         maxLength: 1, // Limit to one character per field
+        // FIX: Explicitly set the text style and color
+        style: TextStyle(
+          color: AppColors
+              .black, // Use a contrasting color (e.g., black or AppColors.brandText)
+          fontSize: 10.sp, // Adjust font size for better visibility
+          fontWeight: FontWeight.bold, // Make it bold
+        ),
+
         onChanged: (value) {
           onChanged(value); // Pass entered value to parent widget
           if (value.isNotEmpty && index < 5) {
