@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:get/instance_manager.dart';
+import 'package:template/core/constants/app_colors.dart';
+import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/my_icons.dart';
+import 'package:template/core/themes/app_text_style.dart';
+import 'package:template/features/auth/widgets/custom_button.dart';
+import 'package:template/features/auth/widgets/custome_textfield.dart';
+import 'package:template/routes/routes_name.dart';
+
+class WhatsyournameScreen extends StatelessWidget {
+  WhatsyournameScreen({super.key});
+
+  final TextEditingController controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 46.h),
+          child: Column(
+            children: [
+              SizedBox(height: 10.h),
+              Center(
+                child: Text(
+                  AppString.whatsYourHeight,
+                  style: AppTextStyles.s24w6I(color: AppColors.brandText),
+                ),
+              ),
+
+              SizedBox(height: 46.h), // Increased spacing after title
+              // Age Selection Custom Widget
+              CustomTextField(
+                hintText: AppString.yourName,
+                icon: MyIcons.navUser,
+                onChanged: (vaule) {},
+                controller: controller,
+              ),
+
+              Spacer(),
+
+              // CONTINUE BUTTON
+              CustomButton(
+                title: AppString.continuee,
+                textStyle: AppTextStyles.s16w5P(),
+                onTap: () {
+                  print('Name: ${controller.text}');
+                  Get.offAllNamed(RoutesName.genderSelection);
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

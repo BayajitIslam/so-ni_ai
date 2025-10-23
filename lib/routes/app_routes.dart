@@ -32,6 +32,7 @@ import 'package:template/features/splash/screens/userselection/profile_ready_scr
 import 'package:template/features/splash/screens/userselection/specific_diet_selection_screen.dart';
 import 'package:template/features/splash/screens/userselection/subscription_screen.dart';
 import 'package:template/features/splash/screens/userselection/weight_selection_screen.dart';
+import 'package:template/features/splash/screens/userselection/whatsyourname_screen.dart';
 import 'package:template/routes/routes_name.dart';
 
 class AppRoutes {
@@ -172,6 +173,11 @@ class AppRoutes {
     GetPage(
       name: RoutesName.profileReady,
       page: () => ProfileReadyScreen(),
+      transition: Transition.rightToLeft,
+    ),
+      GetPage(
+      name: RoutesName.whatsYourName,
+      page: () => WhatsyournameScreen(),
       transition: Transition.rightToLeft,
     ),
   ];

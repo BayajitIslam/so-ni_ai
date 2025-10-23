@@ -28,7 +28,7 @@ class AgeSelectionScreen extends StatelessWidget {
               '55+',
             ],
             selectedOption: selectedAgeRange,
-            nextPagesNamed: RoutesName.genderSelection,
+            nextPagesNamed: RoutesName.whatsYourName,
           ),
         ],
       ),
