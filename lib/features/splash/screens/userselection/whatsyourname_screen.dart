@@ -4,10 +4,8 @@ import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/instance_manager.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/constants/app_string.dart';
-import 'package:template/core/constants/my_icons.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
-import 'package:template/features/auth/widgets/custome_textfield.dart';
 import 'package:template/routes/routes_name.dart';
 
 class WhatsyournameScreen extends StatelessWidget {
@@ -33,11 +31,37 @@ class WhatsyournameScreen extends StatelessWidget {
 
               SizedBox(height: 46.h), // Increased spacing after title
               // Age Selection Custom Widget
-              CustomTextField(
-                hintText: AppString.yourName,
-                icon: MyIcons.navUser,
-                onChanged: (vaule) {},
-                controller: controller,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: Container(
+                  decoration: BoxDecoration(),
+                  child: TextField(
+                    controller: controller,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: AppColors
+                          .yellowishOrange, // Light background for text field
+                      hintText: AppString.yourName,
+                      hintStyle: AppTextStyles.s14w4I(
+                        color: AppColors.black,
+                      ), // Hint text styling from AppTextStyles
+                      // Removing the border and adding a drop shadow effect
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                        borderSide: BorderSide.none,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8.r),
+                        borderSide: BorderSide.none,
+                      ),
+                      // Adding drop shadow using the boxDecoration
+                      contentPadding: EdgeInsets.symmetric(
+                        vertical: 16.h,
+                        horizontal: 20.w,
+                      ),
+                    ),
+                  ),
+                ),
               ),
 
               Spacer(),
