@@ -9,6 +9,7 @@ import 'package:template/features/home/widgets/activity_card.dart';
 import 'package:template/features/home/widgets/day_select_row.dart';
 import 'package:template/features/home/widgets/sleep_tracking_card.dart';
 import 'package:template/features/home/widgets/water_goal_card.dart';
+import 'package:template/features/home/widgets/week_day_selector.dart';
 
 class HomeScreen extends GetView<HomeController> {
   const HomeScreen({super.key});
@@ -117,6 +118,10 @@ class HomeScreen extends GetView<HomeController> {
                         AppString.workWoutProgress,
                         style: AppTextStyles.s20w5P(color: AppColors.black),
                       ),
+
+                      SizedBox(height: 15),
+                      //Day Selected
+                      WeekDateSelector(),
 
                       SizedBox(height: 13.h),
                       // 3. your Daily Workout Progress
