@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:template/core/constants/app_colors.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/home/controllers/home_controller.dart';
 import 'package:template/features/home/widgets/activity_card.dart';
@@ -30,7 +30,7 @@ class HomeScreen extends GetView<HomeController> {
                     children: [
                       // 1. your Daily calories
                       Text(
-                        AppString.yourDailyCalories,
+                        AppString.yourDailyCalories.tr,
                         style: AppTextStyles.s20w5P(color: AppColors.black),
                       ),
                       SizedBox(height: 15.h),
@@ -49,7 +49,7 @@ class HomeScreen extends GetView<HomeController> {
                       SizedBox(height: 13.h),
                       // 2. your Weekly calories
                       Text(
-                        AppString.yourWeeklyCalories,
+                        AppString.yourWeeklyCalories.tr,
                         style: AppTextStyles.s20w5P(color: AppColors.black),
                       ),
                       SizedBox(height: 15.h),
@@ -68,13 +68,13 @@ class HomeScreen extends GetView<HomeController> {
                       //Meal Plan Calendar - customize your three days
                       SizedBox(height: 13.h),
                       Text(
-                        AppString.yourWeeklyCalories,
+                        AppString.yourWeeklyCalories.tr,
                         style: AppTextStyles.s20w5P(color: AppColors.black),
                       ),
 
                       SizedBox(height: 13.h),
                       Text(
-                        AppString.customizeYourThreeDays,
+                        AppString.customizeYourThreeDays.tr,
                         style: AppTextStyles.s14w4P(color: AppColors.black),
                       ),
                     ],
@@ -115,7 +115,7 @@ class HomeScreen extends GetView<HomeController> {
                     children: [
                       // workout Progress
                       Text(
-                        AppString.workWoutProgress,
+                        AppString.workWoutProgress.tr,
                         style: AppTextStyles.s20w5P(color: AppColors.black),
                       ),
 
@@ -126,7 +126,7 @@ class HomeScreen extends GetView<HomeController> {
                       SizedBox(height: 13.h),
                       // 3. your Daily Workout Progress
                       Text(
-                        AppString.yourDailyWorkoutProgress,
+                        AppString.yourDailyWorkoutProgress.tr,
                         style: AppTextStyles.s20w5P(color: AppColors.black),
                       ),
                       SizedBox(height: 15.h),

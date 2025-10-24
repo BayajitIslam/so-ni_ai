@@ -1,6 +1,6 @@
 // lib/features/auth/controllers/otp_controller.dart
 import 'package:get/get.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/routes/routes_name.dart';
 
 class OtpController extends GetxController {

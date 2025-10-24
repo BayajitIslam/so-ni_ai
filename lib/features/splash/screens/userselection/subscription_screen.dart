@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:template/core/constants/app_colors.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/features/splash/controllers/subscription_controller.dart';
@@ -38,7 +38,7 @@ class SubscriptionPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 25.w),
                 child: Text(
-                  AppString.startYour3dayFreeTrailToContinue,
+                  AppString.startYour3dayFreeTrailToContinue.tr,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.s26w5P(color: AppColors.black),
                 ),
@@ -69,10 +69,10 @@ class SubscriptionPage extends StatelessWidget {
                       child: GestureDetector(
                         onTap: () => controller.selectPlan('Yearly'),
                         child: SubscriptionCard(
-                          title: AppString.yearly,
+                          title: AppString.yearly.tr,
                           price: AppString.mo099,
                           isSelected: controller.selectedPlan.value == 'Yearly',
-                          badge: AppString.dayfree3,
+                          badge: AppString.dayfree3.tr,
                         ),
                       ),
                     ),
@@ -89,7 +89,7 @@ class SubscriptionPage extends StatelessWidget {
                     Icon(Icons.check, color: AppColors.black),
                     SizedBox(width: 10.w),
                     Text(
-                      AppString.noPaymentDueNow,
+                      AppString.noPaymentDueNow.tr,
                       style: AppTextStyles.s16w5P(color: AppColors.black),
                     ),
                   ],
@@ -102,7 +102,7 @@ class SubscriptionPage extends StatelessWidget {
                 onTap: () {
                   // Access selected plan
                   print('Selected Plan: ${controller.selectedPlan.value}');
-                  Get.toNamed(RoutesName.profileReady);
+                  Get.toNamed(RoutesName.profileReady.tr);
                 },
               ),
 
@@ -110,7 +110,7 @@ class SubscriptionPage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(top: 19.h),
                 child: Text(
-                  AppString.daysFreeThen,
+                  AppString.daysFreeThen.tr,
                   textAlign: TextAlign.center,
                   style: AppTextStyles.s16w4I(color: AppColors.icon),
                 ),

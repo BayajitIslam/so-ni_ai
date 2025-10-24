@@ -53,6 +53,51 @@ class SelectionField extends StatelessWidget {
             children: List.generate(options.length, (index) {
               return GestureDetector(
                 onTap: () {
+                  // Language Mapping
+                  String languageCode;
+
+                  switch (options[index]) {
+                    case 'German':
+                      languageCode = 'de'; // German
+                      break;
+                    case 'Spanish':
+                      languageCode = 'es'; // Spanish
+                      break;
+                    case 'Italian':
+                      languageCode = 'it'; // Italian
+                      break;
+                    case 'French':
+                      languageCode = 'fr'; // French
+                      break;
+                    case 'Hungarian':
+                      languageCode = 'hu'; // Hungarian
+                      break;
+                    case 'English (UK)':
+                      languageCode =
+                          'en_UK'; // English (UK) -> en for both US and UK
+                      break;
+                    case 'English (US)':
+                      languageCode =
+                          'en_US'; // English (US) -> en for both US and UK
+                      break;
+                    default:
+                      languageCode = 'en_US'; // Default to English
+                  }
+
+                  if (languageCode == "de" ||
+                      languageCode == "es" ||
+                      languageCode == "it" ||
+                      languageCode == "fr" ||
+                      languageCode == "hu" ||
+                      languageCode == "en_UK" ||
+                      languageCode == "en_US") {
+                    // Update Locale
+                    Get.updateLocale(Locale(languageCode));
+                    print("Selected Language Code : $languageCode");
+                  }
+
+                  print(languageCode);
+
                   // Trigger the change when container is tapped
                   selectedOption.value = options[index];
                   // Navigate to the next page

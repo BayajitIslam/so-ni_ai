@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/themes/themes.dart';
 import 'package:template/routes/app_routes.dart';
 import 'package:template/routes/routes_name.dart';
@@ -19,7 +20,13 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: MyAppThemes.lightThemes,
-        initialRoute: RoutesName.splashScreen,
+        translations: TranslationsImplementation(), // Set Translations
+        locale: Locale('en', 'US'), // Default Locale - English (US)
+        fallbackLocale: Locale(
+          'en',
+          'US',
+        ), // Fallback Locale if translation is not found
+        initialRoute: RoutesName.languageSelection,
         getPages: AppRoutes.pages,
       ),
     );

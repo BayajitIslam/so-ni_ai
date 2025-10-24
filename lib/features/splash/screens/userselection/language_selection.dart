@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_rx/get_rx.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/features/splash/widgets/selection_field.dart';
 import 'package:template/routes/routes_name.dart';
 

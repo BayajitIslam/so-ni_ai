@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/constants/image_const.dart';
 import 'package:template/features/splash/widgets/onboarding_widget.dart';
 import 'package:template/routes/routes_name.dart';

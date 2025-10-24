@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import 'package:template/core/constants/app_colors.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/constants/image_const.dart';
 import 'package:template/core/constants/my_icons.dart';
 import 'package:template/core/themes/app_text_style.dart';

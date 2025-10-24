@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:template/core/constants/app_colors.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/themes/app_text_style.dart';
 
 class TrialTimeline extends StatelessWidget {
@@ -90,30 +91,24 @@ class TrialTimeline extends StatelessWidget {
 
             Positioned(
               top: 0.h,
-              child: Expanded(
-                child: _textCard(
-                  AppString.today,
-                  AppString.getFullAccessAndSeeYourMindset,
-                ),
+              child: _textCard(
+                AppString.today.tr,
+                AppString.getFullAccessAndSeeYourMindset.tr,
               ),
             ),
 
             Positioned(
               top: 85.h,
-              child: Expanded(
-                child: _textCard(
-                  AppString.day2,
-                  AppString.getAreminderThatYourTrialEndsIn,
-                ),
+              child: _textCard(
+                AppString.day2.tr,
+                AppString.getAreminderThatYourTrialEndsIn.tr,
               ),
             ),
             Positioned(
               top: 166.h,
-              child: Expanded(
-                child: _textCard(
-                  AppString.after3Day,
-                  AppString.yourFreeTrailEndsAndYouWillbeCharged,
-                ),
+              child: _textCard(
+                AppString.after3Day.tr,
+                AppString.yourFreeTrailEndsAndYouWillbeCharged.tr,
               ),
             ),
           ],
@@ -133,6 +128,7 @@ Widget _textCard(String title, description) {
         SizedBox(height: 4.h),
         Text(
           description,
+          maxLines: 2,
           style: AppTextStyles.s13w4P(color: AppColors.greyNormal),
         ),
       ],

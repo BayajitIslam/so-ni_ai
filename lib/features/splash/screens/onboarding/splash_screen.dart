@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/splash/controllers/splash_controller.dart';
 

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:template/core/constants/app_colors.dart';
-import 'package:template/core/constants/app_string.dart';
+import 'package:template/core/constants/translations.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/controllers/forgot_password_controller.dart';
 import 'package:template/features/auth/controllers/otp_controller.dart';
