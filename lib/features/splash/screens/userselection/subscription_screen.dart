@@ -27,93 +27,96 @@ class SubscriptionPage extends StatelessWidget {
           child: Icon(Icons.close, color: AppColors.black, size: 24.sp),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // Heading text
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 25.w),
-              child: Text(
-                AppString.startYour3dayFreeTrailToContinue,
-                textAlign: TextAlign.center,
-                style: AppTextStyles.s26w5P(color: AppColors.black),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              // Heading text
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 25.w),
+                child: Text(
+                  AppString.startYour3dayFreeTrailToContinue,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.s26w5P(color: AppColors.black),
+                ),
               ),
-            ),
 
-            // Trial Information Section
-            SizedBox(height: 74.h),
-            TrialTimeline(),
-            SizedBox(height: 67.h),
+              // Trial Information Section
+              SizedBox(height: 54.h),
+              TrialTimeline(),
+              SizedBox(height: 67.h),
 
-            // Subscription options with Obx for reactive state
-            Obx(
-              () => Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () => controller.selectPlan('Monthly'),
-                      child: SubscriptionCard(
-                        title: AppString.monthly,
-                        price: AppString.mo199,
-                        isSelected: controller.selectedPlan.value == 'Monthly',
+              // Subscription options with Obx for reactive state
+              Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () => controller.selectPlan('Monthly'),
+                        child: SubscriptionCard(
+                          title: AppString.monthly,
+                          price: AppString.mo199,
+                          isSelected:
+                              controller.selectedPlan.value == 'Monthly',
+                        ),
                       ),
                     ),
-                  ),
-                  Expanded(
-                    child: GestureDetector(
-                      onTap: () => controller.selectPlan('Yearly'),
-                      child: SubscriptionCard(
-                        title: AppString.yearly,
-                        price: AppString.mo099,
-                        isSelected: controller.selectedPlan.value == 'Yearly',
-                        badge: AppString.dayfree3,
+                    Expanded(
+                      child: GestureDetector(
+                        onTap: () => controller.selectPlan('Yearly'),
+                        child: SubscriptionCard(
+                          title: AppString.yearly,
+                          price: AppString.mo099,
+                          isSelected: controller.selectedPlan.value == 'Yearly',
+                          badge: AppString.dayfree3,
+                        ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
 
-            // Payment Due Text
-            Padding(
-              padding: EdgeInsets.only(top: 28.h, bottom: 15.h),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.check, color: AppColors.black),
-                  SizedBox(width: 10.w),
-                  Text(
-                    AppString.noPaymentDueNow,
-                    style: AppTextStyles.s16w5P(color: AppColors.black),
-                  ),
-                ],
+              // Payment Due Text
+              Padding(
+                padding: EdgeInsets.only(top: 28.h, bottom: 15.h),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.check, color: AppColors.black),
+                    SizedBox(width: 10.w),
+                    Text(
+                      AppString.noPaymentDueNow,
+                      style: AppTextStyles.s16w5P(color: AppColors.black),
+                    ),
+                  ],
+                ),
               ),
-            ),
 
-            CustomButton(
-              textStyle: AppTextStyles.s20w5P(),
-              title: AppString.start3dayFreeTrial,
-              onTap: () {
-                // Access selected plan
-                print('Selected Plan: ${controller.selectedPlan.value}');
-                Get.toNamed(RoutesName.profileReady);
-              },
-            ),
-
-            // Below Info Text
-            Padding(
-              padding: EdgeInsets.only(top: 19.h),
-              child: Text(
-                AppString.daysFreeThen,
-                textAlign: TextAlign.center,
-                style: AppTextStyles.s16w4I(color: AppColors.icon),
+              CustomButton(
+                textStyle: AppTextStyles.s20w5P(),
+                title: AppString.start3dayFreeTrial,
+                onTap: () {
+                  // Access selected plan
+                  print('Selected Plan: ${controller.selectedPlan.value}');
+                  Get.toNamed(RoutesName.profileReady);
+                },
               ),
-            ),
-          ],
+
+              // Below Info Text
+              Padding(
+                padding: EdgeInsets.only(top: 19.h),
+                child: Text(
+                  AppString.daysFreeThen,
+                  textAlign: TextAlign.center,
+                  style: AppTextStyles.s16w4I(color: AppColors.icon),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

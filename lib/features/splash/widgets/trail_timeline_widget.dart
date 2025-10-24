@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/constants/app_string.dart';
-import 'package:template/core/constants/my_icons.dart';
 import 'package:template/core/themes/app_text_style.dart';
 
 class TrialTimeline extends StatelessWidget {
@@ -20,7 +19,7 @@ class TrialTimeline extends StatelessWidget {
             Container(
               height: 262.h,
               width: 12.w,
-              margin: EdgeInsets.symmetric(horizontal: 14.w),
+              margin: EdgeInsets.symmetric(horizontal: 12.h),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.r),
                 gradient: LinearGradient(
@@ -41,32 +40,42 @@ class TrialTimeline extends StatelessWidget {
 
             //Icon
             Positioned(
+              top: 0.h,
               child: CircleAvatar(
-                backgroundColor: AppColors.brandText,
-                child: Icon(MyIcons.lock, color: AppColors.white, size: 20.sp),
-              ),
-            ),
-
-            //Icon
-            Positioned(
-              top: 85,
-              child: CircleAvatar(
+                radius: 18.r,
                 backgroundColor: AppColors.brandText,
                 child: Icon(
-                  Icons.notifications_outlined,
+                  Icons.lock_outline,
                   color: AppColors.white,
+                  size: 20.sp,
                 ),
               ),
             ),
 
             //Icon
             Positioned(
-              bottom: 50,
+              top: 85.h,
               child: CircleAvatar(
+                radius: 18.r,
+                backgroundColor: AppColors.brandText,
+                child: Icon(
+                  Icons.notifications_outlined,
+                  color: AppColors.white,
+                  size: 20.sp,
+                ),
+              ),
+            ),
+
+            //Icon
+            Positioned(
+              top: 170.h,
+              child: CircleAvatar(
+                radius: 18.r,
                 backgroundColor: AppColors.greyNormal,
                 child: Icon(
                   Icons.workspace_premium_outlined,
                   color: AppColors.white,
+                  size: 20.sp,
                 ),
               ),
             ),
@@ -75,32 +84,39 @@ class TrialTimeline extends StatelessWidget {
 
         SizedBox(width: 15.w),
         //Content
-        SizedBox(
-          height: 262.h,
-          width: 294.w,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
+        Stack(
+          children: [
+            SizedBox(height: 262.h, width: 294.w),
+
+            Positioned(
+              top: 0.h,
+              child: Expanded(
                 child: _textCard(
                   AppString.today,
                   AppString.getFullAccessAndSeeYourMindset,
                 ),
               ),
-              Expanded(
+            ),
+
+            Positioned(
+              top: 85.h,
+              child: Expanded(
                 child: _textCard(
                   AppString.day2,
                   AppString.getAreminderThatYourTrialEndsIn,
                 ),
               ),
-              Expanded(
+            ),
+            Positioned(
+              top: 166.h,
+              child: Expanded(
                 child: _textCard(
                   AppString.after3Day,
                   AppString.yourFreeTrailEndsAndYouWillbeCharged,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ],
     );
