@@ -214,6 +214,35 @@ class AppTextStyles {
     );
   }
 
+    //  body ----------
+  static TextStyle s16w5I({
+    Color? color,
+    double fontSize = 16,
+    FontWeight fontweight = FontWeight.w500,
+  }) {
+    return GoogleFonts.inter(
+      color: color ?? AppColors.black,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+      //  body ----------
+  static TextStyle s16w6I({
+    Color? color,
+    double fontSize = 16,
+    FontWeight fontweight = FontWeight.w600,
+  }) {
+    return GoogleFonts.inter(
+      color: color ?? AppColors.black,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+
   //  body ----------
   static TextStyle s12w5I({
     Color? color,
