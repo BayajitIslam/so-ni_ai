@@ -12,7 +12,7 @@ class SignInController extends GetxController {
     if (email.isNotEmpty && password.isNotEmpty) {
       // Add your sign-in logic here (e.g., API call)
       print("Sign in successful with email: $email and password: $password");
-      Get.toNamed(RoutesName.ageSelection);
+      Get.toNamed(RoutesName.ageSelection,arguments: "next_pages");
     } else {
       print("Email or password is missing");
     }

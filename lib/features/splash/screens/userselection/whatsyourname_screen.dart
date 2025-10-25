@@ -72,7 +72,10 @@ class WhatsyournameScreen extends StatelessWidget {
                 textStyle: AppTextStyles.s16w5P(),
                 onTap: () {
                   print('Name: ${controller.text}');
-                  Get.offAllNamed(RoutesName.genderSelection);
+                  Get.offAllNamed(
+                    RoutesName.genderSelection,
+                    arguments: "next_pages",
+                  );
                 },
               ),
             ],

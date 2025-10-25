@@ -33,6 +33,8 @@ class SelectionField extends StatelessWidget {
     AppImages.french,
   ];
 
+  final String argument = Get.arguments;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -104,9 +106,14 @@ class SelectionField extends StatelessWidget {
                   }
                   // Trigger the change when container is tapped
                   selectedOption.value = options[index];
-                  // Navigate to the next page
-                  Get.offAllNamed(nextPagesNamed);
-                  print(selectedOption.value); // Print the selected option
+
+                  if (argument == "next_pages") {
+                    // Navigate to the next page
+                    Get.offAllNamed(nextPagesNamed, arguments: "next_pages");
+                    print(selectedOption.value); // Print the selected option
+                  } else {
+                    Get.back();
+                  }
                 },
                 child: Container(
                   height: 50.h,

@@ -17,6 +17,8 @@ class WeightSelectionScreen extends StatelessWidget {
   // in the HeightSelectionScreen.
   final MeasurementController measurementController = Get.find();
 
+  final argument = Get.arguments;
+
   WeightSelectionScreen({super.key});
 
   @override
@@ -85,8 +87,15 @@ class WeightSelectionScreen extends StatelessWidget {
                   print(
                     'Final Weight Selected: ${measurementController.weightValue.value}',
                   );
-                  // Assuming this is the correct route name for the next step:
-                  Get.toNamed(RoutesName.lifestyleSelectin);
+                  if (argument == "next_pages") {
+                    // route name for the next step:
+                    Get.toNamed(
+                      RoutesName.lifestyleSelectin,
+                      arguments: "next_pages",
+                    );
+                  } else {
+                    Get.back();
+                  }
                 },
               ),
             ],

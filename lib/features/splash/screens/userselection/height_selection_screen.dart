@@ -18,6 +18,8 @@ class HeightSelectionScreen extends StatelessWidget {
 
   final MeasurementController measurementController = Get.find();
 
+  final argument = Get.arguments;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +81,14 @@ class HeightSelectionScreen extends StatelessWidget {
                   print(
                     'Final Height Selected: ${measurementController.heightValue.value}',
                   );
-                  Get.toNamed(RoutesName.weighttSelection);
+                  if (argument == "next_pages") {
+                    Get.toNamed(
+                      RoutesName.weighttSelection,
+                      arguments: argument,
+                    );
+                  } else {
+                    Get.back();
+                  }
                 },
               ),
             ],
