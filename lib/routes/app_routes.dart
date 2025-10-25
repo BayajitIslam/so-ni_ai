@@ -12,6 +12,8 @@ import 'package:template/features/auth/screens/sign_in_screen.dart';
 import 'package:template/features/auth/screens/sign_up_screen.dart';
 import 'package:template/features/home/bindings/home_binding.dart';
 import 'package:template/features/home/screens/home_nav.dart';
+import 'package:template/features/home/widgets/camara/camera_screen.dart';
+import 'package:template/features/home/widgets/food_screen.dart';
 import 'package:template/features/splash/bindings/height_selection_binding.dart';
 import 'package:template/features/splash/bindings/splash_binding.dart';
 import 'package:template/features/splash/bindings/subscription_binding.dart';
@@ -175,9 +177,14 @@ class AppRoutes {
       page: () => ProfileReadyScreen(),
       transition: Transition.rightToLeft,
     ),
-      GetPage(
+    GetPage(
       name: RoutesName.whatsYourName,
       page: () => WhatsyournameScreen(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: RoutesName.foodScannerCamaraScreen,
+      page: () => FoodScanCameraScreen(),
       transition: Transition.rightToLeft,
     ),
   ];

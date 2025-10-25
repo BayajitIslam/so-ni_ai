@@ -7,6 +7,8 @@ class RoutesName {
   static const String otpScreen = "/otpScreen";
   static const String passwordReset = "/passwordReset";
   static const String accountCreatedSuccessfull = "/accountCreatedSuccessfull";
+  static const String foodScannerCamaraScreen = "/foodScannerCamaraScreen";
+    static const String foodScreen = "/foodScreen";
 
   //================================  Splash Screen ===========================
   static const String splashScreen = "/splashScreen";
