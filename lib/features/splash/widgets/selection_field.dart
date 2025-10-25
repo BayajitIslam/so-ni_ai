@@ -97,11 +97,11 @@ class SelectionField extends StatelessWidget {
                       Get.updateLocale(
                         Locale(languageCode, languageCode.toUpperCase()),
                       );
-                      print(
+                      debugPrint(
                         "Selected Language Code : ${languageCode.toUpperCase()}.",
                       );
                     } else {
-                      print("Error");
+                      debugPrint("Error");
                     }
                   }
                   // Trigger the change when container is tapped
@@ -110,7 +110,7 @@ class SelectionField extends StatelessWidget {
                   if (argument == "next_pages") {
                     // Navigate to the next page
                     Get.offAllNamed(nextPagesNamed, arguments: "next_pages");
-                    print(selectedOption.value); // Print the selected option
+                    debugPrint(selectedOption.value); // Print the selected option
                   } else {
                     Get.back();
                   }

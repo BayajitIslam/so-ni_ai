@@ -84,7 +84,7 @@ class WeightSelectionScreen extends StatelessWidget {
                 title: AppString.continuee,
                 textStyle: AppTextStyles.s16w5P(),
                 onTap: () {
-                  print(
+                  debugPrint(
                     'Final Weight Selected: ${measurementController.weightValue.value}',
                   );
                   if (argument == "next_pages") {

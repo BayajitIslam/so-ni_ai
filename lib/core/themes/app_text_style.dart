@@ -118,6 +118,76 @@ class AppTextStyles {
   }
 
   //  body ----------
+  static TextStyle s12w6M({
+    Color? color,
+    double fontSize = 12,
+    FontWeight fontweight = FontWeight.w600,
+  }) {
+    return GoogleFonts.montserratAlternates(
+      color: color ?? AppColors.black,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
+  static TextStyle s16w6M({
+    Color? color,
+    double fontSize = 16,
+    FontWeight fontweight = FontWeight.w600,
+  }) {
+    return GoogleFonts.montserratAlternates(
+      color: color ?? AppColors.black,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
+  static TextStyle s16w5M({
+    Color? color,
+    double fontSize = 16,
+    FontWeight fontweight = FontWeight.w500,
+  }) {
+    return GoogleFonts.montserratAlternates(
+      color: color ?? AppColors.black,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
+  static TextStyle s14w5M({
+    Color? color,
+    double fontSize = 14,
+    FontWeight fontweight = FontWeight.w500,
+  }) {
+    return GoogleFonts.montserratAlternates(
+      color: color ?? AppColors.black,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
+  static TextStyle s16w7M({
+    Color? color,
+    double fontSize = 17,
+    FontWeight fontweight = FontWeight.w700,
+  }) {
+    return GoogleFonts.montserratAlternates(
+      color: color ?? AppColors.black,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
   static TextStyle s16w4P({
     Color? color,
     double fontSize = 16,
@@ -214,7 +284,7 @@ class AppTextStyles {
     );
   }
 
-    //  body ----------
+  //  body ----------
   static TextStyle s16w5I({
     Color? color,
     double fontSize = 16,
@@ -228,7 +298,7 @@ class AppTextStyles {
     );
   }
 
-      //  body ----------
+  //  body ----------
   static TextStyle s16w6I({
     Color? color,
     double fontSize = 16,
@@ -242,7 +312,6 @@ class AppTextStyles {
     );
   }
 
-
   //  body ----------
   static TextStyle s12w5I({
     Color? color,
@@ -251,6 +320,20 @@ class AppTextStyles {
   }) {
     return GoogleFonts.inter(
       color: color ?? AppColors.white,
+      fontSize: fontSize.sp,
+      fontWeight: fontweight,
+      height: 1,
+    );
+  }
+
+  //  body ----------
+  static TextStyle s12w5P({
+    Color? color,
+    double fontSize = 12,
+    FontWeight fontweight = FontWeight.w500,
+  }) {
+    return GoogleFonts.poppins(
+      color: color ?? AppColors.black,
       fontSize: fontSize.sp,
       fontWeight: fontweight,
       height: 1,

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/get_core.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/features/home/screens/ai_generated_meal_recommendations_screen.dart';
 import 'package:template/features/home/screens/diary_screen.dart';

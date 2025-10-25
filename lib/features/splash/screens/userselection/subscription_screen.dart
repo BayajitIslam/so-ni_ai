@@ -101,7 +101,7 @@ class SubscriptionPage extends StatelessWidget {
                 title: AppString.start3dayFreeTrial,
                 onTap: () {
                   // Access selected plan
-                  print('Selected Plan: ${controller.selectedPlan.value}');
+                  debugPrint('Selected Plan: ${controller.selectedPlan.value}');
                   Get.toNamed(RoutesName.profileReady.tr);
                 },
               ),

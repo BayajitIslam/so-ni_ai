@@ -1,4 +1,5 @@
 // lib/controllers/signup_controller.dart
+import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 class SignUpController extends GetxController {
@@ -22,9 +23,9 @@ class SignUpController extends GetxController {
   void signUp() {
     if (validateForm()) {
       // Add your sign-up logic here (e.g., API call)
-      print("Sign up successful!");
+      debugPrint("Sign up successful!");
     } else {
-      print("Form is invalid.");
+      debugPrint("Form is invalid.");
     }
   }
 }

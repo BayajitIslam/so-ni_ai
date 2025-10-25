@@ -1,5 +1,6 @@
 // lib/features/auth/controllers/forgot_password_controller.dart
 import 'package:get/get.dart';
+import 'package:flutter/foundation.dart';
 
 class ForgotPasswordController extends GetxController {
   var email = ''.obs;
@@ -8,9 +9,9 @@ class ForgotPasswordController extends GetxController {
   void resetPassword() {
     if (email.isNotEmpty) {
       // Add your reset password logic here (e.g., API call)
-      print("Password reset email sent to: $email");
+      debugPrint("Password reset email sent to: $email");
     } else {
-      print("Email is missing");
+      debugPrint("Email is missing");
     }
   }
 }

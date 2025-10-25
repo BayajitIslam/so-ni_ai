@@ -1,5 +1,6 @@
 // features/splash/controllers/measurement_controller.dart
 
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class MeasurementController extends GetxController {
@@ -51,6 +52,6 @@ class MeasurementController extends GetxController {
     } else {
       weightValue.value = newValue;
     }
-    print('Controller updated: $newValue');
+    debugPrint('Controller updated: $newValue');
   }
 }

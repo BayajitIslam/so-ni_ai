@@ -78,7 +78,7 @@ class HeightSelectionScreen extends StatelessWidget {
                 title: AppString.continuee,
                 textStyle: AppTextStyles.s16w5P(),
                 onTap: () {
-                  print(
+                  debugPrint(
                     'Final Height Selected: ${measurementController.heightValue.value}',
                   );
                   if (argument == "next_pages") {

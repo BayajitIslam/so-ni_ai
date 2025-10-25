@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/instance_manager.dart';
 import 'package:template/core/constants/app_colors.dart';
-import 'package:template/features/home/widgets/food_screen.dart';
+import 'package:template/features/home/screens/food_screen.dart';
 
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;

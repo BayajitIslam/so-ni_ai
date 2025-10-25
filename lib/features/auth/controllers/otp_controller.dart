@@ -2,6 +2,7 @@
 import 'package:get/get.dart';
 import 'package:template/core/constants/translations.dart';
 import 'package:template/routes/routes_name.dart';
+import 'package:flutter/foundation.dart';
 
 class OtpController extends GetxController {
   // Reactive variable to store OTP digits (6 digits)
@@ -20,27 +21,27 @@ class OtpController extends GetxController {
     if (otp.every((digit) => digit.isNotEmpty)) {
       if (isForgotPasswordFlow.value) {
         // Logic for password reset using OTP
-        print("Password reset with OTP: ${otp.join()}");
+        debugPrint("Password reset with OTP: ${otp.join()}");
         Get.toNamed(
           RoutesName.accountCreatedSuccessfull,
           arguments: AppString.passwordUpdateSuccessfully,
         );
       } else {
         // Logic for verifying OTP during Sign Up
-        print("Account verified with OTP: ${otp.join()}");
+        debugPrint("Account verified with OTP: ${otp.join()}");
         Get.toNamed(
           RoutesName.accountCreatedSuccessfull,
           arguments: AppString.accouintCreateSuccesfull,
         );
       }
     } else {
-      print("Please enter the complete OTP.");
+      debugPrint("Please enter the complete OTP.");
     }
   }
 
   // Resend OTP logic (simulated)
   void resendOtp() {
-    print("Resending OTP...");
+    debugPrint("Resending OTP...");
     // Add your resend OTP API call here
   }
 }
