@@ -11,6 +11,8 @@ import 'package:template/features/auth/screens/password_reset_screen.dart';
 import 'package:template/features/auth/screens/sign_in_screen.dart';
 import 'package:template/features/auth/screens/sign_up_screen.dart';
 import 'package:template/features/home/bindings/home_binding.dart';
+import 'package:template/features/home/screens/diary_screen.dart';
+import 'package:template/features/home/screens/food_screen.dart';
 import 'package:template/features/home/screens/home_nav.dart';
 import 'package:template/features/home/screens/camara/camera_screen.dart';
 import 'package:template/features/splash/bindings/height_selection_binding.dart';
@@ -184,6 +186,16 @@ class AppRoutes {
     GetPage(
       name: RoutesName.foodScannerCamaraScreen,
       page: () => FoodScanCameraScreen(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: RoutesName.foodScreen,
+      page: () => FoodScreen(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: RoutesName.diaryScreen,
+      page: () => DiaryScreen(),
       transition: Transition.rightToLeft,
     ),
   ];
