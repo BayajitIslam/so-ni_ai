@@ -20,6 +20,7 @@ class CustomBottomNavBar extends StatelessWidget {
     "assets/icons/Home Angle 2.svg",
     "assets/icons/chicken.svg",
     "assets/icons/diary_re.svg",
+    "assets/icons/chatbot.svg",
     "assets/icons/workout (1).svg",
     "assets/icons/navUser.svg",
   ];
@@ -55,7 +56,7 @@ class CustomBottomNavBar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // Left three items
-            ...List.generate(5, (index) => _buildNavItem(index)),
+            ...List.generate(6, (index) => _buildNavItem(index)),
 
             // Spacer to create the FAB notch gap
             SizedBox(width: 50.w),

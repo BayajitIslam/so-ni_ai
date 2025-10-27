@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/constants/my_icons.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
-import 'package:template/routes/routes_name.dart';
+import 'package:template/features/home/screens/home_nav.dart';
 
 class FoodScreen extends StatelessWidget {
   const FoodScreen({super.key});
@@ -419,7 +417,13 @@ class _MealTimePopupState extends State<MealTimePopup> {
                             verticlePadding: 16,
                             title: "Continue",
                             onTap: () {
-                              Get.offAllNamed(RoutesName.diaryScreen);
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      HomeNavScreen(initialIndex: 2),
+                                ),
+                              );
                             },
                           ),
                         ],

@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/features/home/screens/ai_generated_meal_recommendations_screen.dart';
+import 'package:template/features/home/screens/chatbot_screen.dart';
 import 'package:template/features/home/screens/diary_screen.dart';
 import 'package:template/features/home/screens/home_screens.dart';
 import 'package:template/features/home/screens/profile_screen.dart';
@@ -11,14 +12,22 @@ import 'package:template/features/home/widgets/custome_navbar.dart';
 import 'package:template/routes/routes_name.dart';
 
 class HomeNavScreen extends StatefulWidget {
-  const HomeNavScreen({super.key});
+  const HomeNavScreen({super.key, this.initialIndex = 0});
+
+  final int initialIndex;
 
   @override
   State<HomeNavScreen> createState() => _HomeNavScreenState();
 }
 
 class _HomeNavScreenState extends State<HomeNavScreen> {
-  int _currentIndex = 0;
+  late int _currentIndex;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentIndex = widget.initialIndex;
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -27,10 +36,11 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
   }
 
   //pages list
-  List pages = [
+  final List<Widget> pages = [
     HomeScreen(),
     AiGeneratedMealRecommendationsScreen(),
     DiaryScreen(),
+    ChatbotScreen(),
     WorkoutScreen(),
     ProfileScreen(),
   ];
