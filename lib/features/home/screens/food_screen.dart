@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/themes/app_text_style.dart';
+import 'package:template/features/auth/widgets/custom_button.dart';
 
 class FoodScreen extends StatelessWidget {
   const FoodScreen({super.key});
@@ -107,6 +108,40 @@ class FoodScreen extends StatelessWidget {
                       ),
                     ],
                   ),
+                  _buildFoodItemCard(
+                    title: 'Grilled Chicken Strips',
+                    kcal: 220,
+                    protein: 30,
+                    carbs: 0,
+                    fat: 6,
+                  ),
+                  _buildFoodItemCard(
+                    title: 'Naan Bread',
+                    kcal: 280,
+                    protein: 7,
+                    carbs: 45,
+                    fat: 0,
+                  ),
+                  _buildFoodItemCard(
+                    title: 'Sautéed Bell Peppers (Red & Yellow)',
+                    kcal: 50,
+                    protein: 1,
+                    carbs: 12,
+                    fat: 0.3,
+                  ),
+                  //Button
+                  SizedBox(height: 15),
+                  Column(
+                    children: [
+                      CustomButton(
+                        radius: 12,
+                        verticlePadding: 14,
+                        textStyle: AppTextStyles.s16w5P(),
+                        title: "Add Diary",
+                        onTap: () {},
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -189,4 +224,53 @@ Widget _buildProgressCard({
       ],
     ),
   );
+}
+
+// Food Item Card Method
+Widget _buildFoodItemCard({
+  required String title,
+  required int kcal,
+  required num protein,
+  required num carbs,
+  required num fat,
+}) {
+  return Container(
+    width: double.infinity,
+    padding: EdgeInsets.symmetric(horizontal: 18.w, vertical: 12.h),
+    decoration: BoxDecoration(
+      color: AppColors.yellowishLightOrange,
+      borderRadius: BorderRadius.circular(10.r),
+      boxShadow: [
+        BoxShadow(
+          color: Colors.black.withOpacity(0.06),
+          blurRadius: 10,
+          offset: Offset(0, 2),
+        ),
+      ],
+    ),
+    margin: EdgeInsets.only(top: 15.h),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        // Title
+        Text(title, style: AppTextStyles.s16w4P(color: AppColors.icon)),
+        SizedBox(height: 8.h),
+
+        // Nutrition Info
+        SizedBox(height: 14.h),
+        Text(
+          '$kcal kcal | Protein: ${_formatNumber(protein)}g | Carbs: ${_formatNumber(carbs)}g | Fat: ${_formatNumber(fat)}g',
+          style: AppTextStyles.s13w4P(color: AppColors.black.withOpacity(0.8)),
+        ),
+      ],
+    ),
+  );
+}
+
+// Helper method to format numbers (remove .0 for whole numbers)
+String _formatNumber(num value) {
+  if (value == value.toInt()) {
+    return value.toInt().toString();
+  }
+  return value.toString();
 }
