@@ -6,7 +6,8 @@ import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/themes/app_text_style.dart';
 
 class WeekDateSelector extends StatefulWidget {
-  const WeekDateSelector({super.key});
+  final bool ishomeScreen;
+  const WeekDateSelector({super.key, this.ishomeScreen = true});
 
   @override
   State<WeekDateSelector> createState() => _WeekDateSelectorState();
@@ -27,56 +28,82 @@ class _WeekDateSelectorState extends State<WeekDateSelector> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
+      padding: EdgeInsets.symmetric(horizontal: 0.w, vertical: 16.h),
       decoration: BoxDecoration(
-        color: AppColors.yellowishLightOrange,
+        color: widget.ishomeScreen
+            ? AppColors.yellowishLightOrange
+            : Colors.transparent,
         borderRadius: BorderRadius.circular(16.r),
       ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: List.generate(7, (index) {
-          final day = startOfWeek.add(Duration(days: index));
-          final isSelected =
-              day.day == selectedDate.day && day.month == selectedDate.month;
+      child: SingleChildScrollView(
+        // Make the Row scrollable horizontally
+        scrollDirection: Axis.horizontal, // Horizontal Scroll
+        child: Row(
+          children: List.generate(7, (index) {
+            final day = startOfWeek.add(Duration(days: index));
+            final isSelected =
+                day.day == selectedDate.day && day.month == selectedDate.month;
 
-          return GestureDetector(
-            onTap: () {
-              setState(() {
-                selectedDate = day;
-              });
-              _showActivityPopup(
-                context,
-              ); // Show activities after selecting date
-            },
-            child: Column(
-              children: [
-                Text(
-                  _getWeekdayName(day),
-                  style: GoogleFonts.lato(
-                    fontSize: 16.sp,
-                    fontWeight: FontWeight.w500,
-                    color: AppColors.black,
-                  ),
-                ),
-                SizedBox(height: 8.h),
-                CircleAvatar(
-                  radius: 22.r,
-                  backgroundColor: isSelected
-                      ? AppColors.buttonBg
-                      : AppColors.brandText.withOpacity(0.8),
-                  child: Text(
-                    '${day.day}',
-                    style: GoogleFonts.lato(
-                      fontSize: 16.sp,
-                      fontWeight: FontWeight.w500,
-                      color: AppColors.white,
+            return GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedDate = day;
+                });
+                widget.ishomeScreen ? _showActivityPopup(context) : Container();
+              },
+              child: Column(
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      color: widget.ishomeScreen
+                          ? Colors.transparent
+                          : isSelected
+                          ? AppColors.yellowishLightOrange
+                          : Colors.transparent,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(16.r),
+                        topRight: Radius.circular(16.r),
+                        bottomLeft: Radius.circular(50.r),
+                        bottomRight: Radius.circular(50.r),
+                      ),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 8.h,
+                      horizontal: 10.w,
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          _getWeekdayName(day),
+                          style: GoogleFonts.lato(
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.black,
+                          ),
+                        ),
+                        SizedBox(height: 8.h),
+                        CircleAvatar(
+                          radius: 22.r,
+                          backgroundColor: isSelected
+                              ? AppColors.buttonBg
+                              : AppColors.brandText.withOpacity(0.8),
+                          child: Text(
+                            '${day.day}',
+                            style: GoogleFonts.lato(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.white,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
-                ),
-              ],
-            ),
-          );
-        }),
+                ],
+              ),
+            );
+          }),
+        ),
       ),
     );
   }
@@ -95,7 +122,6 @@ class _WeekDateSelectorState extends State<WeekDateSelector> {
           color: Colors.transparent,
           borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
         ),
-
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

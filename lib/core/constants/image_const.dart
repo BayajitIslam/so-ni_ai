@@ -24,4 +24,7 @@ class AppImages {
   static const String hourglass = "assets/icons/hourglass.svg";
   static const String meat = "assets/icons/meat.svg";
   static const String youtube = "assets/icons/youtube.svg";
+
+  // =================== Diary Pages ===============
+  static const String waterOutline = "assets/icons/water_outline.svg";
 }

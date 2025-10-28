@@ -6,7 +6,8 @@ import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 
 class DiaryMealCard extends StatelessWidget {
-  const DiaryMealCard({super.key});
+  final String title;
+  const DiaryMealCard({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class DiaryMealCard extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("Breackfast", style: AppTextStyles.s16w6M()),
+                  Text(title, style: AppTextStyles.s16w6M()),
                   SizedBox(height: 5.h),
                   Text("420 kcal", style: AppTextStyles.s14w5M()),
                 ],
