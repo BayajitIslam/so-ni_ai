@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           'en',
           'US',
         ), // Fallback Locale if translation is not found
-        initialRoute: RoutesName.foodScreen,
+        initialRoute: RoutesName.homeNavScreen,
         getPages: AppRoutes.pages,
       ),
     );

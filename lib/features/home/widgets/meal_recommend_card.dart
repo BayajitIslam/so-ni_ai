@@ -5,13 +5,31 @@ import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 
 class MealRecommendCard extends StatelessWidget {
-  const MealRecommendCard({super.key});
+  final String title;
+  const MealRecommendCard({super.key, required this.title});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(color: AppColors.yellowishLightOrange),
-      child: _buildActivityItem("Greek Yogurt", "Calories : 320"),
+    return Column(
+      children: [
+        //title
+        SizedBox(height: 12.h),
+        Row(
+          children: [
+            Text(
+              title,
+              style: AppTextStyles.s20w5P(color: AppColors.black, fontSize: 18),
+            ),
+          ],
+        ),
+
+        //main Container
+        SizedBox(height: 16.h),
+        Container(
+          decoration: BoxDecoration(color: AppColors.yellowishLightOrange),
+          child: _buildActivityItem("Greek Yogurt", "Calories : 320"),
+        ),
+      ],
     );
   }
 }
