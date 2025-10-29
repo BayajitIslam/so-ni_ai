@@ -77,6 +77,7 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
       bottomNavigationBar: CustomBottomNavBar(
         selectedIndex: _currentIndex,
         onItemTapped: _onItemTapped,
+        context: context,
       ),
     );
   }

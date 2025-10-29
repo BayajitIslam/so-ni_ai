@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-// PLACEHOLDERS: Replace with your actual imports
+import 'package:get/get.dart';
+import 'package:get/instance_manager.dart';
 import 'package:template/core/constants/app_colors.dart';
+import 'package:template/features/home/screens/chatbot_screen.dart';
+import 'package:template/routes/routes_name.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
-  // Pass the current selected index and a callback function
   final int selectedIndex;
   final Function(int) onItemTapped;
+  final BuildContext context; // Context add korlam navigation er jonno
 
   const CustomBottomNavBar({
     super.key,
     required this.selectedIndex,
     required this.onItemTapped,
+    required this.context, // Required context
   });
 
-  // Define your navigation icons and their corresponding indexes
   final List<String> navIcons = const [
     "assets/icons/Home Angle 2.svg",
     "assets/icons/chicken.svg",
@@ -25,40 +28,25 @@ class CustomBottomNavBar extends StatelessWidget {
     "assets/icons/navUser.svg",
   ];
 
-  // NOTE: I am using standard Material Icons for simplicity.
-  // You would replace these with your custom icon assets or MyIcons.
-
   @override
   Widget build(BuildContext context) {
-    // 1. BottomAppBar: The rounded container
     return BottomAppBar(
-      color: Colors.transparent, // Important: Use transparent here
+      color: Colors.transparent,
       elevation: 0,
       child: Container(
-        height: 80.h, // Height of the entire bar
+        height: 80.h,
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
         decoration: BoxDecoration(
-          color: AppColors.yellowishLightOrange, // Light tan background color
+          color: AppColors.yellowishLightOrange,
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10.r),
             bottomRight: Radius.circular(10.r),
           ),
-          // Add a slight shadow if needed
-          // boxShadow: [
-          //   BoxShadow(
-          //     color: Colors.black.withOpacity(0.05),
-          //     spreadRadius: 1,
-          //     blurRadius: 10,
-          //   ),
-          // ],
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            // Left three items
             ...List.generate(6, (index) => _buildNavItem(index)),
-
-            // Spacer to create the FAB notch gap
             SizedBox(width: 50.w),
           ],
         ),
@@ -66,23 +54,25 @@ class CustomBottomNavBar extends StatelessWidget {
     );
   }
 
-  // Helper method to build each icon button
   Widget _buildNavItem(int index) {
     final bool isSelected = index == selectedIndex;
-    // Correct index for the 4th and 5th items
     final iconIndex = index;
 
-    // Define the icon color based on selection
-    final Color iconColor = isSelected
-        ? AppColors
-              .brandText // White icon when active
-        : AppColors.black;
+    final Color iconColor = isSelected ? AppColors.brandText : AppColors.black;
 
     return Expanded(
       child: GestureDetector(
-        onTap: () => onItemTapped(iconIndex),
+        onTap: () {
+          // AI Coach button check (index 3 = chatbot icon)
+          if (iconIndex == 3) {
+            // Navbar chara navigate to AI Coach
+            Get.toNamed(RoutesName.chatbotScreen);
+          } else {
+            // Normal navigation with navbar
+            onItemTapped(iconIndex);
+          }
+        },
         child: Container(
-          // Set minimum dimensions for the circular/rounded background
           width: 50.w,
           height: 50.h,
           alignment: Alignment.center,
@@ -96,7 +86,6 @@ class CustomBottomNavBar extends StatelessWidget {
     );
   }
 }
-
 //  IconButton(
 //         icon: Icon(
 //           navIcons[iconIndex],

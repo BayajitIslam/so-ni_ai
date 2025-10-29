@@ -11,6 +11,7 @@ import 'package:template/features/auth/screens/password_reset_screen.dart';
 import 'package:template/features/auth/screens/sign_in_screen.dart';
 import 'package:template/features/auth/screens/sign_up_screen.dart';
 import 'package:template/features/home/bindings/home_binding.dart';
+import 'package:template/features/home/screens/chatbot_screen.dart';
 import 'package:template/features/home/screens/diary_screen.dart';
 import 'package:template/features/home/screens/food_screen.dart';
 import 'package:template/features/home/screens/home_nav.dart';
@@ -196,6 +197,11 @@ class AppRoutes {
     GetPage(
       name: RoutesName.diaryScreen,
       page: () => DiaryScreen(),
+      transition: Transition.rightToLeft,
+    ),
+     GetPage(
+      name: RoutesName.chatbotScreen,
+      page: () => ChatbotScreen(),
       transition: Transition.rightToLeft,
     ),
   ];
