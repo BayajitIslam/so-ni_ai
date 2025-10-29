@@ -16,6 +16,7 @@ import 'package:template/features/home/screens/diary_screen.dart';
 import 'package:template/features/home/screens/food_screen.dart';
 import 'package:template/features/home/screens/home_nav.dart';
 import 'package:template/features/home/screens/camara/camera_screen.dart';
+import 'package:template/features/home/screens/workout_video_players_screen.dart';
 import 'package:template/features/splash/bindings/height_selection_binding.dart';
 import 'package:template/features/splash/bindings/splash_binding.dart';
 import 'package:template/features/splash/bindings/subscription_binding.dart';
@@ -199,9 +200,14 @@ class AppRoutes {
       page: () => DiaryScreen(),
       transition: Transition.rightToLeft,
     ),
-     GetPage(
+    GetPage(
       name: RoutesName.chatbotScreen,
       page: () => ChatbotScreen(),
+      transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: RoutesName.workoutVideoPlayerScreen,
+      page: () => WorkoutVideoPlayerScreen(),
       transition: Transition.rightToLeft,
     ),
   ];

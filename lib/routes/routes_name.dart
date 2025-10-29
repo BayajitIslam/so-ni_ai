@@ -33,4 +33,5 @@ class RoutesName {
   static const String profileReady = "/profileReadyScreen";
   static const String whatsYourName = "/whatsYourNameScreen";
   static const String chatbotScreen = "/chatbotScreen";
+  static const String workoutVideoPlayerScreen = "/WorkoutVideoPlayerScreen";
 }
