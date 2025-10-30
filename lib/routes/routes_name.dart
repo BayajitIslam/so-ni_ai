@@ -10,6 +10,9 @@ class RoutesName {
   static const String foodScannerCamaraScreen = "/foodScannerCamaraScreen";
   static const String foodScreen = "/foodScreen";
   static const String diaryScreen = "/diaryScreen";
+  static const String chatbotScreen = "/chatbotScreen";
+  static const String workoutVideoPlayerScreen = "/WorkoutVideoPlayerScreen";
+  static const String nextExerciseScreen = "/nextExerciseScreen";
 
   //================================  Splash Screen ===========================
   static const String splashScreen = "/splashScreen";
@@ -32,6 +35,4 @@ class RoutesName {
   static const String subscriptionPages = "/subscriptionPages";
   static const String profileReady = "/profileReadyScreen";
   static const String whatsYourName = "/whatsYourNameScreen";
-  static const String chatbotScreen = "/chatbotScreen";
-  static const String workoutVideoPlayerScreen = "/WorkoutVideoPlayerScreen";
 }

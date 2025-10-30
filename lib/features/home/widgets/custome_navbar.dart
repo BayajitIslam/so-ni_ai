@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:get/instance_manager.dart';
 import 'package:template/core/constants/app_colors.dart';
-import 'package:template/features/home/screens/chatbot_screen.dart';
 import 'package:template/routes/routes_name.dart';
 
 class CustomBottomNavBar extends StatelessWidget {

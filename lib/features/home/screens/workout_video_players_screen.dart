@@ -2,8 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/themes/app_text_style.dart';
+import 'package:template/routes/routes_name.dart';
 
 class WorkoutVideoPlayerScreen extends StatefulWidget {
   const WorkoutVideoPlayerScreen({super.key});
@@ -44,6 +46,9 @@ class _WorkoutVideoPlayerScreenState extends State<WorkoutVideoPlayerScreen> {
         setState(() {
           currentSeconds++;
         });
+        if (currentSeconds == totalSeconds) {
+          Get.offNamed(RoutesName.nextExerciseScreen);
+        }
       } else {
         _timer?.cancel();
         setState(() {
