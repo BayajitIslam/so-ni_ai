@@ -16,8 +16,8 @@ class CustomOtpTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 44.w, // Width of each OTP input field
-      height: 44.h, // Height of each OTP input field
+      width: 54.w, // Width of each OTP input field
+      height: 54.h, // Height of each OTP input field
       decoration: BoxDecoration(
         boxShadow: [
           BoxShadow(
@@ -36,7 +36,7 @@ class CustomOtpTextField extends StatelessWidget {
         style: TextStyle(
           color: AppColors
               .black, // Use a contrasting color (e.g., black or AppColors.brandText)
-          fontSize: 10.sp, // Adjust font size for better visibility
+          fontSize: 14.sp, // Adjust font size for better visibility
           fontWeight: FontWeight.bold, // Make it bold
         ),
 

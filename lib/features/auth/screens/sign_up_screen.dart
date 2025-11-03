@@ -93,7 +93,7 @@ class SignUpScreen extends StatelessWidget {
                   signUpController.signUp();
 
                   Get.toNamed(
-                    RoutesName.otpScreen,
+                    RoutesName.verifyotpScreen,
                     arguments: emailController.text,
                   );
                 },

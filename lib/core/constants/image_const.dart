@@ -27,4 +27,10 @@ class AppImages {
 
   // =================== Diary Pages ===============
   static const String waterOutline = "assets/icons/water_outline.svg";
+
+  // =================== Camara Pages ===============
+  static const String scan = "assets/icons/scan.svg";
+  static const String gallery = "assets/icons/gallery.svg";
+  static const String flashOff = "assets/icons/thunder.svg";
+  static const String flashOn = "assets/icons/flash.svg";
 }

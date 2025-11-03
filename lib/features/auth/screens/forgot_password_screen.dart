@@ -85,7 +85,7 @@ class ForgotPasswordScreen extends StatelessWidget {
                       .resetPassword(); // Call resetPassword method
 
                   Get.toNamed(
-                    RoutesName.otpScreen,
+                    RoutesName.updatePasswordotpScreen,
                     arguments: emailController.text,
                   );
                 },

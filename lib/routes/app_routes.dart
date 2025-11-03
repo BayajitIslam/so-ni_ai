@@ -6,7 +6,8 @@ import 'package:template/features/auth/bindings/sign_in_binding.dart';
 import 'package:template/features/auth/bindings/sign_up_binding.dart';
 import 'package:template/features/auth/screens/account_create_successfull.dart';
 import 'package:template/features/auth/screens/forgot_password_screen.dart';
-import 'package:template/features/auth/screens/otp_screen.dart';
+import 'package:template/features/auth/screens/update_password_otp_screen%20copy.dart';
+import 'package:template/features/auth/screens/verify_otp_screen.dart';
 import 'package:template/features/auth/screens/password_reset_screen.dart';
 import 'package:template/features/auth/screens/sign_in_screen.dart';
 import 'package:template/features/auth/screens/sign_up_screen.dart';
@@ -69,8 +70,8 @@ class AppRoutes {
       binding: ForgotPasswordBinding(),
     ),
     GetPage(
-      name: RoutesName.otpScreen,
-      page: () => OtpScreen(),
+      name: RoutesName.verifyotpScreen,
+      page: () => VerifyOtpScreen(),
       transition: Transition.rightToLeft,
       binding: OtpBinding(),
     ),
@@ -221,6 +222,12 @@ class AppRoutes {
       name: RoutesName.privacyPolicyScreen,
       page: () => PrivacyPolicyScreen(),
       transition: Transition.rightToLeft,
+    ),
+    GetPage(
+      name: RoutesName.updatePasswordotpScreen,
+      page: () => UpdatePasswordOtpScreen(),
+      transition: Transition.rightToLeft,
+      binding: OtpBinding(),
     ),
   ];
 }

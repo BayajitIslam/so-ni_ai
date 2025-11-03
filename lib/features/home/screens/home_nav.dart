@@ -57,7 +57,10 @@ class _HomeNavScreenState extends State<HomeNavScreen> {
         child: FloatingActionButton(
           onPressed: () {
             // Handle Camera/Quick Action click
-            Get.toNamed(RoutesName.foodScannerCamaraScreen);
+            Get.offNamedUntil(
+              RoutesName.foodScannerCamaraScreen,
+              (route) => route.isFirst,
+            );
           },
           elevation: 0,
           backgroundColor: AppColors.buttonBg, // Dark brown color

@@ -10,8 +10,8 @@ import 'package:template/features/auth/controllers/otp_controller.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 import 'package:template/features/auth/widgets/custom_otp_textfield.dart';
 
-class OtpScreen extends StatelessWidget {
-  OtpScreen({super.key});
+class VerifyOtpScreen extends StatelessWidget {
+  VerifyOtpScreen({super.key});
 
   //email argumnet
   final String email = Get.arguments;
@@ -59,10 +59,10 @@ class OtpScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: List.generate(6, (index) {
-                  return Container(
-                    width: 44.w,
-                    height: 44.h,
-                    margin: EdgeInsets.symmetric(horizontal: 5.w),
+                  return SizedBox(
+                    width: 54.w,
+                    height: 54.h,
+
                     //Text Field
                     child: CustomOtpTextField(
                       index: index,
@@ -76,9 +76,7 @@ class OtpScreen extends StatelessWidget {
               SizedBox(height: 24.h),
               // Verify Code Button
               CustomButton(
-                title: otpController.isForgotPasswordFlow.value
-                    ? AppString.resetPassword
-                    : AppString.veryfyCode,
+                title: AppString.veryfyCode,
                 onTap: () {
                   otpController
                       .verifyOtp(); // Call verifyOtp method when tapped

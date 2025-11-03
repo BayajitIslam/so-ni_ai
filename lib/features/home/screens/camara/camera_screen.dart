@@ -2,10 +2,17 @@ import 'dart:io';
 import 'dart:ui';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:image/image.dart' as img;
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:permission_handler/permission_handler.dart';
+import 'package:template/core/constants/app_colors.dart';
+import 'package:template/core/constants/image_const.dart';
+import 'package:template/core/themes/app_text_style.dart';
+import 'package:template/routes/routes_name.dart';
 import 'display_picture_screen.dart';
 
 class FoodScanCameraScreen extends StatefulWidget {
@@ -261,7 +268,7 @@ class _FoodScanCameraScreenState extends State<FoodScanCameraScreen> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       GestureDetector(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => Get.offNamed(RoutesName.homeNavScreen),
                         child: const Icon(
                           Icons.close,
                           color: Colors.white,
@@ -290,36 +297,76 @@ class _FoodScanCameraScreenState extends State<FoodScanCameraScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          ElevatedButton.icon(
-                            onPressed: _captureImage,
-                            icon: const Icon(Icons.restaurant_menu),
-                            label: const Text("Scan Food"),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
+                          InkWell(
+                            onTap: _captureImage,
+                            child: Container(
+                              width: 121.w,
+                              height: 78.h,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFEEED5),
+                                borderRadius: BorderRadius.circular(16.r),
                               ),
-                              backgroundColor: Colors.white,
-                              foregroundColor: Colors.black,
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 12,
-                                horizontal: 18,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 22.w,
+                                vertical: 11.h,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  //
+                                  SvgPicture.asset(
+                                    AppImages.scan,
+                                    height: 26,
+                                    width: 26,
+                                  ),
+
+                                  //
+                                  SizedBox(height: 6.h),
+                                  Text(
+                                    "Scan Food",
+                                    style: AppTextStyles.s14w5P(
+                                      fontweight: FontWeight.w400,
+                                      color: AppColors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
                           const SizedBox(width: 16),
-                          ElevatedButton.icon(
-                            onPressed: _pickFromGallery,
-                            icon: const Icon(Icons.photo_library_outlined),
-                            label: const Text("Library"),
-                            style: ElevatedButton.styleFrom(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
+                          InkWell(
+                            onTap: _pickFromGallery,
+                            child: Container(
+                              width: 121.w,
+                              height: 78.h,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFEEED5),
+                                borderRadius: BorderRadius.circular(16.r),
                               ),
-                              backgroundColor: Colors.white,
-                              foregroundColor: Colors.black,
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 12,
-                                horizontal: 18,
+                              padding: EdgeInsets.symmetric(
+                                horizontal: 24.w,
+                                vertical: 11.h,
+                              ),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  //
+                                  SvgPicture.asset(
+                                    AppImages.gallery,
+                                    height: 26,
+                                    width: 26,
+                                  ),
+
+                                  //
+                                  SizedBox(height: 6.h),
+                                  Text(
+                                    "Library",
+                                    style: AppTextStyles.s14w5P(
+                                      fontweight: FontWeight.w400,
+                                      color: AppColors.black,
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
                           ),
@@ -329,12 +376,38 @@ class _FoodScanCameraScreenState extends State<FoodScanCameraScreen> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          IconButton(
-                            onPressed: _toggleFlash,
-                            icon: Icon(
-                              _isTorchOn ? Icons.flash_on : Icons.flash_off,
-                              color: Colors.white,
-                              size: 32,
+                          InkWell(
+                            onTap: _toggleFlash,
+                            child: Container(
+                              width: 28,
+                              height: 28,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: AppColors.yellowishLightOrange,
+                                  width: 1.3,
+                                ),
+                              ),
+                              padding: EdgeInsets.all(5),
+                              child: _isTorchOn
+                                  ? SvgPicture.asset(
+                                      AppImages.flashOn,
+                                      width: 8.75,
+                                      height: 8.75,
+                                      colorFilter: const ColorFilter.mode(
+                                        AppColors.yellowishOrange,
+                                        BlendMode.srcIn,
+                                      ),
+                                    )
+                                  : SvgPicture.asset(
+                                      AppImages.flashOff,
+                                      width: 8.75,
+                                      height: 8.75,
+                                      colorFilter: const ColorFilter.mode(
+                                        AppColors.yellowishOrange,
+                                        BlendMode.srcIn,
+                                      ),
+                                    ),
                             ),
                           ),
                           const SizedBox(width: 24),
@@ -346,17 +419,50 @@ class _FoodScanCameraScreenState extends State<FoodScanCameraScreen> {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 border: Border.all(
-                                  color: Colors.white,
+                                  color: AppColors.yellowishLightOrange,
                                   width: 4,
                                 ),
                               ),
                               child: const Center(
                                 child: CircleAvatar(
                                   radius: 24,
-                                  backgroundColor: Colors.white,
+                                  backgroundColor:
+                                      AppColors.yellowishLightOrange,
                                 ),
                               ),
                             ),
+                          ),
+                          const SizedBox(width: 24),
+                          Container(
+                            width: 28,
+                            height: 28,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              border: Border.all(
+                                color: Colors.transparent,
+                                width: 1.3,
+                              ),
+                            ),
+                            padding: EdgeInsets.all(5),
+                            child: _isTorchOn
+                                ? SvgPicture.asset(
+                                    AppImages.flashOn,
+                                    width: 8.75,
+                                    height: 8.75,
+                                    colorFilter: const ColorFilter.mode(
+                                      Colors.transparent,
+                                      BlendMode.srcIn,
+                                    ),
+                                  )
+                                : SvgPicture.asset(
+                                    AppImages.flashOff,
+                                    width: 8.75,
+                                    height: 8.75,
+                                    colorFilter: const ColorFilter.mode(
+                                      Colors.transparent,
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
                           ),
                         ],
                       ),
