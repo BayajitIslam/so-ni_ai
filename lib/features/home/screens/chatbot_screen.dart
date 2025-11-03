@@ -1,6 +1,7 @@
 // Main Screen Widget
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:template/core/constants/app_colors.dart';
@@ -61,10 +62,10 @@ class ChatbotScreen extends StatelessWidget {
 
                   //  action Button
                   IconButton(
-                    icon: Icon(
-                      Icons.more_vert,
-                      color: Colors.black,
-                      size: 24.sp,
+                    icon: SvgPicture.asset(
+                      "assets/icons/messageBot.svg",
+                      height: 22.h,
+                      width: 22.w,
                     ),
                     onPressed: () {
                       Get.bottomSheet(
@@ -178,7 +179,7 @@ class ChatbotScreen extends StatelessWidget {
 
             // Quick Action Buttons
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 11.w, vertical: 6.h),
+              padding: EdgeInsets.symmetric(horizontal: 33.w, vertical: 6.h),
               child: Row(
                 children: [
                   _buildQuickButton('log meals', controller),
