@@ -1,33 +1,47 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:template/core/constants/app_colors.dart';
 import 'package:template/core/themes/app_text_style.dart';
 import 'package:template/features/auth/widgets/custom_button.dart';
 
 class MealRecommendCard extends StatelessWidget {
   final String title;
-  const MealRecommendCard({super.key, required this.title});
+  final bool isTitleDisable;
+  final bool isScreen;
+  const MealRecommendCard({
+    super.key,
+    this.title = "",
+    this.isTitleDisable = false,
+    this.isScreen = true,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         //title
-        SizedBox(height: 12.h),
-        Row(
-          children: [
-            Text(
-              title,
-              style: AppTextStyles.s20w5P(color: AppColors.black, fontSize: 18),
-            ),
-          ],
-        ),
+        isTitleDisable ? SizedBox.shrink() : SizedBox(height: 12.h),
+        isTitleDisable
+            ? SizedBox.shrink()
+            : Row(
+                children: [
+                  Text(
+                    title,
+                    style: AppTextStyles.s20w5P(
+                      color: AppColors.black,
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
 
         //main Container
         SizedBox(height: 16.h),
         Container(
           decoration: BoxDecoration(color: AppColors.yellowishLightOrange),
-          child: _buildActivityItem("Greek Yogurt", "Calories : 320"),
+          child: _buildActivityItem("Greek Yogurt", "Calories : 320", isScreen),
         ),
       ],
     );
@@ -35,7 +49,7 @@ class MealRecommendCard extends StatelessWidget {
 }
 
 // Helper function to build each activity item
-Widget _buildActivityItem(String name, String calories) {
+Widget _buildActivityItem(String name, String calories, bool isScreen) {
   return Container(
     padding: EdgeInsets.only(left: 16.w, right: 10.w, top: 17.h, bottom: 17.h),
     decoration: BoxDecoration(
@@ -95,7 +109,7 @@ Widget _buildActivityItem(String name, String calories) {
                     radius: 8,
                     verticlePadding: 8,
                     title: "swap meal",
-                    onTap: () {},
+                    onTap: isScreen ? _showSwapMeal : null,
                     color: Colors.transparent,
                     isBorderEnable: true,
                   ),
@@ -105,6 +119,52 @@ Widget _buildActivityItem(String name, String calories) {
           ],
         ),
       ],
+    ),
+  );
+}
+
+//Show Swap Meal With Option
+
+void _showSwapMeal() {
+  Get.bottomSheet(
+    isScrollControlled: true,
+    Container(
+      padding: EdgeInsets.all(20.w),
+      decoration: BoxDecoration(
+        color: AppColors.brand,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(24.r)),
+      ),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Container(
+            width: 76.w,
+            height: 3.h,
+            decoration: BoxDecoration(
+              color: AppColors.buttonBg,
+              borderRadius: BorderRadius.circular(3.r),
+            ),
+          ),
+
+          Container(
+            width: double.infinity,
+            decoration: BoxDecoration(color: AppColors.brand),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
+            child: Text(
+              "Swap Your Meal with Equal Calories",
+              style: AppTextStyles.s20w5P(color: AppColors.icon),
+            ),
+          ),
+          Column(
+            children: [
+              MealRecommendCard(isTitleDisable: true, isScreen: false),
+              MealRecommendCard(isTitleDisable: true, isScreen: false),
+              MealRecommendCard(isTitleDisable: true, isScreen: false),
+              MealRecommendCard(isTitleDisable: true, isScreen: false),
+            ],
+          ),
+        ],
+      ),
     ),
   );
 }

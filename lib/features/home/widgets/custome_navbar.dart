@@ -59,7 +59,9 @@ class CustomBottomNavBar extends StatelessWidget {
     final Color iconColor = isSelected ? AppColors.brandText : AppColors.black;
 
     return Expanded(
-      child: GestureDetector(
+      child: InkWell(
+        enableFeedback: true,
+        focusColor: AppColors.fire,
         onTap: () {
           // AI Coach button check (index 3 = chatbot icon)
           if (iconIndex == 3) {
@@ -71,8 +73,8 @@ class CustomBottomNavBar extends StatelessWidget {
           }
         },
         child: Container(
-          width: 50.w,
-          height: 50.h,
+          width: 80.w,
+          height: 80.h,
           alignment: Alignment.center,
           child: SvgPicture.asset(
             navIcons[index],

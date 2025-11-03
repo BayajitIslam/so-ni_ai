@@ -13,6 +13,7 @@ class RoutesName {
   static const String chatbotScreen = "/chatbotScreen";
   static const String workoutVideoPlayerScreen = "/WorkoutVideoPlayerScreen";
   static const String nextExerciseScreen = "/nextExerciseScreen";
+  static const String privacyPolicyScreen = "/privacyPolicyScreen";
 
   //================================  Splash Screen ===========================
   static const String splashScreen = "/splashScreen";

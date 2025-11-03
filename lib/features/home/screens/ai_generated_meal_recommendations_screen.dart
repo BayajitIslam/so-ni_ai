@@ -57,8 +57,8 @@ class AiGeneratedMealRecommendationsScreen extends StatelessWidget {
                     //
                     MealRecommendCard(title: "breakfast"),
                     MealRecommendCard(title: "lunch"),
-                    MealRecommendCard(title: "dinner"),
-                    MealRecommendCard(title: "dinner"),
+                    MealRecommendCard(title: "Dinner"),
+                    MealRecommendCard(title: "Snack"),
                   ],
                 ),
               ),

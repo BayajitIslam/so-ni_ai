@@ -122,7 +122,11 @@ class ProfileScreen extends StatelessWidget {
             ),
 
             //Privacy And Policy
-            ProfileCard(title: "Privacy and Policy", topTitleDisable: true),
+            ProfileCard(
+              title: "Privacy and Policy",
+              topTitleDisable: true,
+              onTap: () => Get.toNamed(RoutesName.privacyPolicyScreen),
+            ),
 
             //Logout
             ProfileCard(
